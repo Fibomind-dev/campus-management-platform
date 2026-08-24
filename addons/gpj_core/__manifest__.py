@@ -5,7 +5,7 @@
     'summary': 'Core models and shared foundations for campus management',
     'description': """
 GPJ Core
-=======
+=========
 
 Provides the foundational models and shared infrastructure
 for the campus management system.
@@ -13,6 +13,8 @@ for the campus management system.
     'author': 'FiboMind',
     'depends': ['base'],
     'data': [
+        'security/gpj_security.xml',
+        'security/ir_rule.xml',
         'security/ir.model.access.csv',
     ],
     'installable': True,

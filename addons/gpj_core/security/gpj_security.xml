@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- GPJ Core Security Groups -->
+        <record id="group_gpj_user" model="res.groups">
+            <field name="name">GPJ Core User</field>
+            <field name="comment">Base access to own institution's data</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_gpj_admin" model="res.groups">
+            <field name="name">GPJ Core Administrator</field>
+            <field name="comment">Full administrative access to institution data and users within authorized institutions</field>
+            <field name="implied_ids" eval="[(4, ref('group_gpj_user'))]"/>
+        </record>
+
+        <record id="group_gpj_readonly" model="res.groups">
+            <field name="name">GPJ Core Read-only</field>
+            <field name="comment">Read-only access to own institution's data</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
+        <record id="group_gpj_campus_manager" model="res.groups">
+            <field name="name">GPJ Campus Manager</field>
+            <field name="comment">Manage campus-scoped data within institution</field>
+            <field name="implied_ids" eval="[(4, ref('group_gpj_user'))]"/>
+        </record>
+
+        <record id="group_gpj_department_head" model="res.groups">
+            <field name="name">GPJ Department Head</field>
+            <field name="comment">Manage department and sub-organizational units</field>
+            <field name="implied_ids" eval="[(4, ref('group_gpj_user'))]"/>
+        </record>
+
+        <record id="group_gpj_ou_manager" model="res.groups">
+            <field name="name">GPJ OU Manager</field>
+            <field name="comment">Manage specific organizational unit subtree</field>
+            <field name="implied_ids" eval="[(4, ref('group_gpj_user'))]"/>
+        </record>
+
+        <record id="group_gpj_cross_institution" model="res.groups">
+            <field name="name">GPJ Cross-Institution Reporting</field>
+            <field name="comment">Read-only access across all institutions (reporting)</field>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+    </data>
+</odoo>

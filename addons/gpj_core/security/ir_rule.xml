@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- ============================================================
+             Institution-scoped models
+             ============================================================ -->
+
+        <record id="gpj_rule_campus_user" model="ir.rule">
+            <field name="name">GPJ: Campus - Institution isolation</field>
+            <field name="model_id" ref="model_gpj_campus"/>
+            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_user')), (4, ref('group_gpj_readonly'))]"/>
+        </record>
+
+        <record id="gpj_rule_campus_admin" model="ir.rule">
+            <field name="name">GPJ: Campus - Admin institution isolation</field>
+            <field name="model_id" ref="model_gpj_campus"/>
+            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_admin'))]"/>
+        </record>
+
+
+        <record id="gpj_rule_department_user" model="ir.rule">
+            <field name="name">GPJ: Department - Institution isolation</field>
+            <field name="model_id" ref="model_gpj_department"/>
+            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_user')), (4, ref('group_gpj_readonly'))]"/>
+        </record>
+
+        <record id="gpj_rule_department_admin" model="ir.rule">
+            <field name="name">GPJ: Department - Admin institution isolation</field>
+            <field name="model_id" ref="model_gpj_department"/>
+            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_admin'))]"/>
+        </record>
+
+
+        <record id="gpj_rule_organizational_unit_user" model="ir.rule">
+            <field name="name">GPJ: Organizational Unit - Institution isolation</field>
+            <field name="model_id" ref="model_gpj_organizational_unit"/>
+            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_user')), (4, ref('group_gpj_readonly'))]"/>
+        </record>
+
+        <record id="gpj_rule_organizational_unit_admin" model="ir.rule">
+            <field name="name">GPJ: Organizational Unit - Admin institution isolation</field>
+            <field name="model_id" ref="model_gpj_organizational_unit"/>
+            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_admin'))]"/>
+        </record>
+
+
+        <record id="gpj_rule_designation_user" model="ir.rule">
+            <field name="name">GPJ: Designation - Institution isolation</field>
+            <field name="model_id" ref="model_gpj_designation"/>
+            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_user')), (4, ref('group_gpj_readonly'))]"/>
+        </record>
+
+        <record id="gpj_rule_designation_admin" model="ir.rule">
+            <field name="name">GPJ: Designation - Admin institution isolation</field>
+            <field name="model_id" ref="model_gpj_designation"/>
+            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_admin'))]"/>
+        </record>
+
+
+        <record id="gpj_rule_institutional_role_user" model="ir.rule">
+            <field name="name">GPJ: Institutional Role - Institution isolation</field>
+            <field name="model_id" ref="model_gpj_institutional_role"/>
+            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_user')), (4, ref('group_gpj_readonly'))]"/>
+        </record>
+
+        <record id="gpj_rule_institutional_role_admin" model="ir.rule">
+            <field name="name">GPJ: Institutional Role - Admin institution isolation</field>
+            <field name="model_id" ref="model_gpj_institutional_role"/>
+            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_admin'))]"/>
+        </record>
+
+
+        <!-- ============================================================
+             Institution itself
+             ============================================================ -->
+
+        <record id="gpj_rule_institution_user" model="ir.rule">
+            <field name="name">GPJ: Institution - User isolation</field>
+            <field name="model_id" ref="model_gpj_institution"/>
+            <field name="domain_force">[('id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_user')), (4, ref('group_gpj_readonly'))]"/>
+        </record>
+
+        <record id="gpj_rule_institution_admin" model="ir.rule">
+            <field name="name">GPJ: Institution - Admin isolation</field>
+            <field name="model_id" ref="model_gpj_institution"/>
+            <field name="domain_force">[('id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_admin'))]"/>
+        </record>
+
+
+        <!-- ============================================================
+             Cross-institution reporting
+             ============================================================ -->
+
+        <record id="gpj_rule_campus_cross_institution" model="ir.rule">
+            <field name="name">GPJ: Campus - Cross-institution reporting</field>
+            <field name="model_id" ref="model_gpj_campus"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_cross_institution'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="gpj_rule_department_cross_institution" model="ir.rule">
+            <field name="name">GPJ: Department - Cross-institution reporting</field>
+            <field name="model_id" ref="model_gpj_department"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_cross_institution'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="gpj_rule_organizational_unit_cross_institution" model="ir.rule">
+            <field name="name">GPJ: Organizational Unit - Cross-institution reporting</field>
+            <field name="model_id" ref="model_gpj_organizational_unit"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_cross_institution'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="gpj_rule_designation_cross_institution" model="ir.rule">
+            <field name="name">GPJ: Designation - Cross-institution reporting</field>
+            <field name="model_id" ref="model_gpj_designation"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_cross_institution'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="gpj_rule_institutional_role_cross_institution" model="ir.rule">
+            <field name="name">GPJ: Institutional Role - Cross-institution reporting</field>
+            <field name="model_id" ref="model_gpj_institutional_role"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_cross_institution'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="gpj_rule_institution_cross_institution" model="ir.rule">
+            <field name="name">GPJ: Institution - Cross-institution reporting</field>
+            <field name="model_id" ref="model_gpj_institution"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_cross_institution'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+
+        <!-- ============================================================
+             Membership
+             ============================================================ -->
+
+        <record id="gpj_rule_membership_own" model="ir.rule">
+            <field name="name">GPJ: Membership - Own memberships</field>
+            <field name="model_id" ref="model_gpj_institution_membership"/>
+            <field name="domain_force">[('user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_user')), (4, ref('group_gpj_readonly'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+        <record id="gpj_rule_membership_admin" model="ir.rule">
+            <field name="name">GPJ: Membership - Admin access within institution</field>
+            <field name="model_id" ref="model_gpj_institution_membership"/>
+            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="groups" eval="[(4, ref('group_gpj_admin'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="True"/>
+            <field name="perm_create" eval="True"/>
+            <field name="perm_unlink" eval="True"/>
+        </record>
+
+    </data>
+</odoo>
