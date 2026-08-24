@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gpj_institution_user,gpj.institution.user,model_gpj_institution,base.group_user,1,1,1,1
+access_gpj_campus_user,gpj.campus.user,model_gpj_campus,base.group_user,1,1,1,1
+access_gpj_department_user,gpj.department.user,model_gpj_department,base.group_user,1,1,1,1
+access_gpj_organizational_unit_user,gpj.organizational.unit.user,model_gpj_organizational_unit,base.group_user,1,1,1,1
+access_gpj_designation_user,gpj.designation.user,model_gpj_designation,base.group_user,1,1,1,1
+access_gpj_institutional_role_user,gpj.institutional.role.user,model_gpj_institutional_role,base.group_user,1,1,1,1
