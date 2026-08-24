@@ -1,0 +1,42 @@
+<odoo>
+    <record id="view_simple_notes_tree" model="ir.ui.view">
+        <field name="name">simple.notes.tree</field>
+        <field name="model">simple.notes</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="date"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_simple_notes_form" model="ir.ui.view">
+        <field name="name">simple.notes.form</field>
+        <field name="model">simple.notes</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="partner_id"/>
+                        <field name="date"/>
+                    </group>
+                    <notebook>
+                        <page string="Content">
+                            <field name="content" placeholder="Enter note content..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_simple_notes" model="ir.actions.act_window">
+        <field name="name">Simple Notes</field>
+        <field name="res_model">simple.notes</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <menuitem id="menu_simple_notes" name="Simple Notes" action="action_simple_notes" sequence="10"/>
+</odoo>
