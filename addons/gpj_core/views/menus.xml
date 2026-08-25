@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- ============================================================
+             Top-level Application Menu
+             ============================================================ -->
+        <menuitem
+            id="menu_gpj_core_root"
+            name="GPJ Core"
+            web_icon="gpj_core,static/description/icon.png"
+            sequence="10"
+        />
+
+        <!-- ============================================================
+             Dashboard
+             ============================================================ -->
+        <menuitem
+            id="menu_gpj_dashboard"
+            name="Dashboard"
+            parent="menu_gpj_core_root"
+            action="action_gpj_dashboard"
+            sequence="1"
+        />
+
+        <!-- ============================================================
+             Institution Management
+             ============================================================ -->
+        <menuitem
+            id="menu_gpj_institution_management"
+            name="Institution"
+            parent="menu_gpj_core_root"
+            sequence="10"
+        />
+
+        <menuitem
+            id="menu_gpj_institutions"
+            name="Institutions"
+            parent="menu_gpj_institution_management"
+            action="action_gpj_institution"
+            sequence="1"
+        />
+
+        <menuitem
+            id="menu_gpj_campuses"
+            name="Campuses"
+            parent="menu_gpj_institution_management"
+            action="action_gpj_campus"
+            sequence="2"
+        />
+
+        <menuitem
+            id="menu_gpj_departments"
+            name="Departments"
+            parent="menu_gpj_institution_management"
+            action="action_gpj_department"
+            sequence="3"
+        />
+
+        <menuitem
+            id="menu_gpj_organizational_units"
+            name="Organizational Units"
+            parent="menu_gpj_institution_management"
+            action="action_gpj_organizational_unit"
+            sequence="4"
+        />
+
+        <menuitem
+            id="menu_gpj_designations"
+            name="Designations"
+            parent="menu_gpj_institution_management"
+            action="action_gpj_designation"
+            sequence="5"
+        />
+
+        <menuitem
+            id="menu_gpj_institutional_roles"
+            name="Institutional Roles"
+            parent="menu_gpj_institution_management"
+            action="action_gpj_institutional_role"
+            sequence="6"
+        />
+
+        <!-- ============================================================
+             Memberships
+             ============================================================ -->
+        <menuitem
+            id="menu_gpj_memberships"
+            name="Memberships"
+            parent="menu_gpj_core_root"
+            action="action_gpj_institution_membership"
+            sequence="20"
+        />
+    </data>
+</odoo>

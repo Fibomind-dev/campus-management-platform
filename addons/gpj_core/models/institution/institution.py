@@ -29,6 +29,7 @@ class GPJInstitution(models.Model):
     organizational_unit_ids = fields.One2many('gpj.organizational.unit', 'institution_id', string='Organizational Units')
     designation_ids = fields.One2many('gpj.designation', 'institution_id', string='Designations')
     institutional_role_ids = fields.One2many('gpj.institutional.role', 'institution_id', string='Institutional Roles')
+    membership_ids = fields.One2many('gpj.institution.membership', 'institution_id', string='Memberships')
 
     _code_unique = models.Constraint(
         'UNIQUE(code)',
