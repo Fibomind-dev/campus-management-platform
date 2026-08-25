@@ -1,6 +1,6 @@
 from odoo.tests.common import TransactionCase
 from odoo.tests import tagged
-from odoo.exceptions import ValidationError, AccessError
+from odoo.exceptions import ValidationError, AccessError, UserError
 from odoo import fields
 from odoo import Command
 
@@ -164,7 +164,7 @@ class TestGPJInstitutionFoundation(TransactionCase):
         inst = self.Institution.create({'name': 'Inst A', 'code': 'INSTA'})
         ou1 = self.OU.create({'name': 'OU1', 'code': 'OU1', 'institution_id': inst.id})
         ou2 = self.OU.create({'name': 'OU2', 'code': 'OU2', 'institution_id': inst.id, 'parent_id': ou1.id})
-        with self.assertRaises(ValidationError):
+        with self.assertRaises(UserError):
             ou1.write({'parent_id': ou2.id})
 
     # ============================================================
