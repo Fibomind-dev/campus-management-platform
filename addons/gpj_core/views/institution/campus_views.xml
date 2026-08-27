@@ -91,7 +91,8 @@
                             <group string="Basic Information">
                                 <field name="name"/>
                                 <field name="code"/>
-                                <field name="institution_id" options="{'no_create': True, 'no_open': True}"/>
+                                <!-- <field name="institution_id" options="{'no_create': True, 'no_open': True}"/> -->
+                                <field name="institution_id"/>
                             </group>
                             <group string="Details">
                                 <field name="address" widget="text" placeholder="Campus address..."/>

@@ -33,9 +33,42 @@ for the campus management system.
             'gpj_core/static/src/js/institution_ui.js',
             'gpj_core/static/src/xml/institution_ui.xml',
             'gpj_core/static/src/scss/institution_ui.scss',
+            'gpj_core/static/src/scss/dashboard.scss',
         ],
     },
     'installable': True,
     'application': True,
     'license': 'LGPL-3',
 }
+
+
+# {
+#     'name': 'GPJ Core',
+#     'version': '1.0.0',
+#     'category': 'Management',
+#     'summary': 'Core Management for Institutions, Campuses, and Roles',
+#     'depends': ['base', 'web', 'mail'],
+#     'data': [
+#         'security/gpj_security.xml',
+#         'security/ir.model.access.csv',
+#         'security/ir_rule.xml',
+#         'views/institution/institution_views.xml',
+#         'views/institution/campus_views.xml',
+#         'views/institution/department_views.xml',
+#         'views/institution/organizational_unit_views.xml',
+#         'views/institution/designation_views.xml',
+#         'views/institution/institutional_role_views.xml',
+#         'views/membership/membership_views.xml',
+#         'views/users/res_users_views.xml',
+#         'views/menus.xml',
+#     ],
+#     'assets': {
+#         'web.assets_backend': [
+#             'gpj_core/static/src/js/dashboard.js',
+#             'gpj_core/static/src/xml/dashboard.xml',
+#         ],
+#     },
+#     'installable': True,
+#     'application': True,
+#     'license': 'LGPL-3',
+# }

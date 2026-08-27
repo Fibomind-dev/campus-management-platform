@@ -1,0 +1,36 @@
+/* ============================================================
+   GPJ CORE DASHBOARD
+   ============================================================ */
+
+.o_gpj_dashboard {
+    height: calc(100vh - 100px);
+    min-height: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding-bottom: 3rem;
+
+    /* Firefox */
+    scrollbar-width: thin;
+    scrollbar-color: #adb5bd transparent;
+}
+
+
+/* Chrome / Edge / Safari */
+.o_gpj_dashboard::-webkit-scrollbar {
+    width: 8px;
+}
+
+.o_gpj_dashboard::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.o_gpj_dashboard::-webkit-scrollbar-thumb {
+    background: #adb5bd;
+    border-radius: 10px;
+}
+
+.o_gpj_dashboard::-webkit-scrollbar-thumb:hover {
+    background: #6c757d;
+}
