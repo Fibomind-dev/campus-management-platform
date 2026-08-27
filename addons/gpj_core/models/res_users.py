@@ -11,6 +11,7 @@ class ResUsers(models.Model):
     gpj_institution_ids = fields.Many2many(
         'gpj.institution',
         compute='_compute_gpj_institution_ids',
+        search='_search_gpj_institution_ids',
         string='Accessible Institutions',
         help='Institutions this user has active membership in'
     )
@@ -40,3 +41,27 @@ class ResUsers(models.Model):
                 .filtered('active')
                 .institution_id
             )
+
+    def _search_gpj_institution_ids(self, operator, value):
+        # Translate the computed Many2many filter into a domain on res.users
+        # that mirrors _compute_gpj_institution_ids (active memberships only).
+        if operator not in ('=', '!=', 'in', 'not in'):
+            return [
+                ('gpj_institution_membership_ids.institution_id', operator, value),
+                ('gpj_institution_membership_ids.active', '=', True),
+            ]
+        values = list(value) if isinstance(value, (list, tuple)) else [value]
+        self.env.cr.execute(
+            """
+            SELECT DISTINCT m.user_id
+            FROM gpj_institution_membership m
+            WHERE m.active = TRUE
+              AND m.institution_id = ANY(%s)
+            """,
+            [values],
+        )
+        user_ids = [r[0] for r in self.env.cr.fetchall()]
+        if operator in ('=', 'in'):
+            return [('id', 'in', user_ids)]
+        # '!=' / 'not in'
+        return [('id', 'not in', user_ids)]

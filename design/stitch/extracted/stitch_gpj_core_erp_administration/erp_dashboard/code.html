@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard - GPJ ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#572e99",
+                        "secondary": "#4355b9",
+                        "on-secondary-fixed-variant": "#293ca0",
+                        "secondary-fixed": "#dee0ff",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f0f1f2",
+                        "inverse-primary": "#b6c6ef",
+                        "primary-fixed-dim": "#b6c6ef",
+                        "secondary-fixed-dim": "#bac3ff",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "outline": "#75777f",
+                        "on-tertiary-fixed": "#260058",
+                        "surface-variant": "#e1e3e4",
+                        "tertiary": "#21004d",
+                        "secondary-container": "#8596ff",
+                        "surface-container-highest": "#e1e3e4",
+                        "tertiary-fixed-dim": "#d4bbff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#081b3a",
+                        "on-secondary-container": "#11278e",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#3a047c",
+                        "inverse-surface": "#2e3132",
+                        "on-primary-fixed-variant": "#364768",
+                        "surface-container": "#edeeef",
+                        "primary-fixed": "#d8e2ff",
+                        "outline-variant": "#c5c6cf",
+                        "surface": "#f8f9fa",
+                        "on-secondary-fixed": "#00105c",
+                        "background": "#f8f9fa",
+                        "on-surface": "#191c1d",
+                        "on-surface-variant": "#44474e",
+                        "on-tertiary-container": "#a57eec",
+                        "tertiary-fixed": "#ebdcff",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "surface-dim": "#d9dadb",
+                        "surface-container-high": "#e7e8e9",
+                        "on-primary-container": "#8293b8",
+                        "surface-bright": "#f8f9fa",
+                        "primary": "#031635",
+                        "primary-container": "#1a2b4b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#4e5e81"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "gutter": "16px",
+                        "table-cell-padding": "12px 16px",
+                        "margin-page": "24px",
+                        "topbar-height": "64px",
+                        "sidebar-collapsed": "72px",
+                        "sidebar-width": "260px"
+                    },
+                    fontFamily: {
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    fontSize: {
+                        "headline-xl": ["24px", { lineHeight: "32px", letterSpacing: "-0.02em", fontWeight: "700" }],
+                        "body-md": ["14px", { lineHeight: "20px", fontWeight: "400" }],
+                        "body-lg": ["15px", { lineHeight: "22px", fontWeight: "400" }],
+                        "label-sm": ["11px", { lineHeight: "14px", fontWeight: "500" }],
+                        "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
+                        "headline-lg": ["20px", { lineHeight: "28px", fontWeight: "600" }],
+                        "body-sm": ["13px", { lineHeight: "18px", fontWeight: "400" }],
+                        "headline-md": ["16px", { lineHeight: "24px", fontWeight: "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: theme('colors.background'); color: theme('colors.on-background'); font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .icon-fill { font-variation-settings: 'FILL' 1; }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-container docked full-width h-topbar sticky top-0 z-40 border-b border-outline-variant shadow-sm flex justify-between items-center px-gutter w-full md:ml-sidebar-width transition-all duration-300">
+<div class="flex items-center gap-4">
+<!-- Mobile Menu Toggle (Visible only on mobile) -->
+<button aria-label="Open Menu" class="md:hidden text-primary dark:text-primary-fixed-dim hover:bg-surface-variant p-2 rounded-full transition-colors">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<div class="font-headline-md text-headline-md font-bold text-primary flex items-center gap-2">
+                GPJ ERP
+            </div>
+<div class="hidden md:flex items-center bg-surface-container-low rounded-full px-4 py-2 border border-outline-variant focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-outline mr-2 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-64 placeholder-outline-variant font-body-sm text-on-surface" placeholder="Search across ERP (Ctrl+K)" type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden sm:flex items-center gap-2 font-label-md text-label-md text-on-surface-variant">
+<span>Academic Year:</span>
+<select class="bg-surface-container-low border border-outline-variant rounded-md py-1 px-2 text-on-surface focus:ring-primary focus:border-primary">
+<option>2023-2024</option>
+<option>2022-2023</option>
+</select>
+</div>
+<button class="text-primary dark:text-primary-fixed-dim hover:text-primary transition-colors duration-200 p-2 rounded-full hover:bg-surface-variant relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-primary dark:text-primary-fixed-dim hover:text-primary transition-colors duration-200 p-2 rounded-full hover:bg-surface-variant hidden sm:block">
+<span class="material-symbols-outlined">help</span>
+</button>
+<button class="bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container px-4 py-2 rounded-md font-label-md text-label-md transition-colors hidden md:flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-sm">add</span>
+                Create
+            </button>
+<img alt="Administrator Profile" class="w-8 h-8 rounded-full border border-outline-variant object-cover ml-2" data-alt="A professional headshot of a mature academic administrator in business formal attire. The portrait is brightly lit in a modern office environment, featuring soft, diffused lighting that highlights a trustworthy and confident expression. The background is a slightly blurred, light-themed office setting with subtle architectural elements, conveying a sense of corporate modern authority." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-I7bv1kODApHVq2vyvR4UE90X1eb_uY7AzM9bPsVTAIk5LFNmh48ewc5WjP23nJZqfGob58deY1HFe2-s8tmsqWcHlWyf7F1fDjGZaedVNib1x7rVGHcIgrvBjbq-3NZdcGcRgnqu-ui1Jetu6bMPWBF2f0skya1s5QLVu80f9fN_-fobQnCHrZzbJ4X3OemeXsC4zAuKzFMq-Irt-xxTit0dbIgZxt-m-a4GvNaY4i4gTMdmcEhY"/>
+</div>
+</header>
+<div class="flex flex-1">
+<!-- SideNavBar -->
+<nav class="bg-primary dark:bg-primary docked h-screen w-sidebar fixed left-0 top-0 border-r border-outline-variant flat no shadows flex flex-col py-4 px-2 hidden md:flex z-50 overflow-y-auto">
+<div class="flex items-center gap-3 px-4 pb-6 border-b border-primary-container mb-4">
+<div class="w-10 h-10 bg-surface rounded-md flex items-center justify-center shrink-0">
+<span class="font-headline-md text-headline-md font-bold text-primary">GPJ</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md font-bold text-on-primary">GPJ ERP</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">Core &amp; Admin</span>
+</div>
+</div>
+<ul class="flex flex-col gap-1 flex-1 font-body-md text-body-md">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 bg-secondary text-on-secondary rounded-lg font-bold opacity-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined icon-fill">dashboard</span>
+                        Dashboard
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">account_balance</span>
+                        Institution
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">school</span>
+                        Academic Structure
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">apartment</span>
+                        Infrastructure
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">group</span>
+                        People
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">security</span>
+                        Security &amp; Access
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">database</span>
+                        Master Data
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span>
+                        Configuration
+                    </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 rounded-lg" href="#">
+<span class="material-symbols-outlined">assessment</span>
+                        Reports
+                    </a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-sidebar-width p-margin-page bg-surface-container-low min-h-[calc(100vh-64px)] overflow-x-hidden">
+<!-- Page Header -->
+<div class="mb-6 flex justify-between items-end flex-wrap gap-4">
+<div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface">Dashboard</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Overview of Government Polytechnic, Jalgaon ERP Operations</p>
+</div>
+<div class="text-sm font-label-md text-on-surface-variant flex gap-2">
+<span class="bg-surface border border-outline-variant px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary inline-block"></span> System Status: Optimal
+                    </span>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Hero Section (Spans 8 cols) -->
+<div class="md:col-span-8 bg-surface rounded-xl border border-outline-variant shadow-[0px_4px_12px_rgba(0,0,0,0.03)] overflow-hidden flex flex-col sm:flex-row relative">
+<div class="p-6 flex-1 z-10 flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-3 mb-4">
+<div class="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center border border-outline-variant">
+<span class="material-symbols-outlined text-primary text-2xl">account_balance</span>
+</div>
+<div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Government Polytechnic, Jalgaon</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Institution Overview</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4 max-w-lg">
+                                Central administration module for managing academic structures, infrastructure, and personnel across all campus facilities.
+                            </p>
+</div>
+<div class="flex gap-4">
+<button class="bg-secondary text-on-secondary px-4 py-2 rounded-md font-label-md text-label-md hover:bg-on-secondary-fixed-variant transition-colors shadow-sm">View Full Profile</button>
+<button class="bg-surface-container text-on-surface px-4 py-2 rounded-md font-label-md text-label-md border border-outline-variant hover:bg-surface-variant transition-colors">Generate Report</button>
+</div>
+</div>
+<div class="sm:w-1/3 h-48 sm:h-auto relative bg-surface-container-low hidden sm:block">
+<img alt="Institution Campus" class="w-full h-full object-cover border-l border-outline-variant opacity-80 mix-blend-multiply" data-alt="A clean, wide-angle architectural exterior shot of a modern polytechnic educational building on a bright sunny day. The facade is professional and institutional, utilizing concrete and large glass windows. The sky is a clear light blue. The composition is balanced and conveys a sense of established academic authority and structured learning environments." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxEBoyJP69OXHlSZK1v9AAPWCF6VOW7pj6oEXbieL9LTbvfG-Elv6aiU6IsPoNWg-YxVAcQpN7pn_62KJkOvxB15rUULuNINn5ebMDE-CKD3oldMsAWgkXH0X4CKsz73BW-Te3IWRNc3gdi4kHWy9-cFO_q3JJQEhuLIYjCNs8CTIKV3QwVItfS8miOJJG52J-HktanFWmlnfAITFSukgS904CptmKfGTg371UP3Jl7LeanxsYfta3"/>
+</div>
+</div>
+<!-- Stats Grid (Spans 4 cols, 2x2 grid internally) -->
+<div class="md:col-span-4 grid grid-cols-2 gap-4">
+<div class="bg-surface p-4 rounded-xl border border-outline-variant shadow-[0px_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between hover:-translate-y-1 transition-transform duration-200">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Total Students</span>
+<span class="material-symbols-outlined text-secondary text-sm">groups</span>
+</div>
+<div>
+<span class="font-headline-xl text-headline-xl text-on-surface">2,142</span>
+<div class="flex items-center gap-1 mt-1 text-green-700 text-xs font-medium">
+<span class="material-symbols-outlined" style="font-size: 14px;">trending_up</span> +5.2%
+                            </div>
+</div>
+</div>
+<div class="bg-surface p-4 rounded-xl border border-outline-variant shadow-[0px_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between hover:-translate-y-1 transition-transform duration-200">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Faculty Staff</span>
+<span class="material-symbols-outlined text-secondary text-sm">badge</span>
+</div>
+<div>
+<span class="font-headline-xl text-headline-xl text-on-surface">162</span>
+<div class="flex items-center gap-1 mt-1 text-surface-variant text-xs font-medium">
+<span class="material-symbols-outlined" style="font-size: 14px;">horizontal_rule</span> Stable
+                            </div>
+</div>
+</div>
+<div class="bg-surface p-4 rounded-xl border border-outline-variant shadow-[0px_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between hover:-translate-y-1 transition-transform duration-200">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Active Programs</span>
+<span class="material-symbols-outlined text-secondary text-sm">menu_book</span>
+</div>
+<div>
+<span class="font-headline-xl text-headline-xl text-on-surface">12</span>
+<div class="flex items-center gap-1 mt-1 text-surface-variant text-xs font-medium">
+                                Across 4 Depts
+                            </div>
+</div>
+</div>
+<div class="bg-surface p-4 rounded-xl border border-outline-variant shadow-[0px_2px_8px_rgba(0,0,0,0.02)] flex flex-col justify-between hover:-translate-y-1 transition-transform duration-200">
+<div class="flex justify-between items-start mb-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Infrastructure</span>
+<span class="material-symbols-outlined text-secondary text-sm">domain</span>
+</div>
+<div>
+<span class="font-headline-xl text-headline-xl text-on-surface">29</span>
+<div class="flex items-center gap-1 mt-1 text-error text-xs font-medium">
+<span class="material-symbols-outlined" style="font-size: 14px;">warning</span> 2 maint. req
+                            </div>
+</div>
+</div>
+</div>
+<!-- Quick Actions (Spans 4 cols) -->
+<div class="md:col-span-4 bg-surface rounded-xl border border-outline-variant shadow-[0px_4px_12px_rgba(0,0,0,0.03)] p-6 flex flex-col">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-4 pb-2 border-b border-surface-variant">Quick Actions</h3>
+<div class="grid grid-cols-2 gap-3 flex-1">
+<button class="flex flex-col items-center justify-center p-3 bg-surface-container-lowest border border-outline-variant rounded-lg hover:border-secondary hover:bg-surface-container-low transition-all group">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined icon-fill">person_add</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Register Student</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 bg-surface-container-lowest border border-outline-variant rounded-lg hover:border-secondary hover:bg-surface-container-low transition-all group">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined icon-fill">post_add</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Create Course</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 bg-surface-container-lowest border border-outline-variant rounded-lg hover:border-secondary hover:bg-surface-container-low transition-all group">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined icon-fill">summarize</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">Generate Report</span>
+</button>
+<button class="flex flex-col items-center justify-center p-3 bg-surface-container-lowest border border-outline-variant rounded-lg hover:border-secondary hover:bg-surface-container-low transition-all group">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined icon-fill">settings</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface text-center">System Settings</span>
+</button>
+</div>
+</div>
+<!-- Recent Activity & Alerts (Spans 8 cols) -->
+<div class="md:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+<!-- System Alerts -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-[0px_4px_12px_rgba(0,0,0,0.03)] flex flex-col">
+<div class="p-4 border-b border-surface-variant flex justify-between items-center bg-surface-container-low rounded-t-xl">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-error">warning</span>
+                                System Alerts
+                            </h3>
+<span class="bg-error-container text-on-error-container text-xs px-2 py-0.5 rounded-full font-bold">2 New</span>
+</div>
+<div class="p-0 overflow-y-auto max-h-64">
+<ul class="divide-y divide-surface-variant">
+<li class="p-4 hover:bg-surface-container-lowest transition-colors flex gap-3">
+<div class="w-2 h-2 mt-1.5 rounded-full bg-error shrink-0"></div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">Database Backup Failed</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">Scheduled daily backup for 'Academic Data' failed to complete at 03:00 AM.</p>
+<p class="font-label-sm text-label-sm text-outline mt-2 text-xs">2 hours ago</p>
+</div>
+</li>
+<li class="p-4 hover:bg-surface-container-lowest transition-colors flex gap-3">
+<div class="w-2 h-2 mt-1.5 rounded-full bg-secondary shrink-0"></div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface font-medium">New Module Update Available</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-1">ERP Core v2.4.1 is ready for installation. Requires system restart.</p>
+<p class="font-label-sm text-label-sm text-outline mt-2 text-xs">Yesterday</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="p-3 border-t border-surface-variant text-center bg-surface-container-lowest rounded-b-xl">
+<a class="font-label-md text-label-md text-secondary hover:underline" href="#">View All Alerts</a>
+</div>
+</div>
+<!-- Recent Activity -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-[0px_4px_12px_rgba(0,0,0,0.03)] flex flex-col">
+<div class="p-4 border-b border-surface-variant flex justify-between items-center">
+<h3 class="font-headline-md text-headline-md text-on-surface">Recent Activity</h3>
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-sm">more_horiz</span></button>
+</div>
+<div class="p-4 overflow-y-auto max-h-64 flex-1 relative">
+<!-- Timeline Line -->
+<div class="absolute left-6 top-6 bottom-4 w-px bg-outline-variant"></div>
+<ul class="space-y-4 relative z-10">
+<li class="flex gap-4">
+<div class="w-5 h-5 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center shrink-0 mt-0.5 border-2 border-surface">
+<span class="material-symbols-outlined text-[10px]">edit</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface"><span class="font-semibold">Dr. A. Sharma</span> updated course syllabus for <span class="font-medium text-secondary">CSE-301</span></p>
+<p class="font-label-sm text-label-sm text-outline mt-1 text-xs">10:45 AM</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="w-5 h-5 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0 mt-0.5 border-2 border-surface">
+<span class="material-symbols-outlined text-[10px]">person_add</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface">New faculty profile created in <span class="font-medium text-secondary">Civil Dept</span></p>
+<p class="font-label-sm text-label-sm text-outline mt-1 text-xs">09:15 AM</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="w-5 h-5 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center shrink-0 mt-0.5 border-2 border-surface">
+<span class="material-symbols-outlined text-[10px]">login</span>
+</div>
+<div>
+<p class="font-body-sm text-body-sm text-on-surface">System backup initiated by <span class="font-semibold">Admin</span></p>
+<p class="font-label-sm text-label-sm text-outline mt-1 text-xs">Yesterday, 11:30 PM</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-low full-width py-4 border-t border-outline-variant flat no shadows flex justify-between items-center px-margin-page md:ml-sidebar-width z-40 mt-auto">
+<div class="font-label-sm text-label-sm text-on-surface-variant dark:text-on-surface-variant">
+            © 2024 Government Polytechnic, Jalgaon. All rights reserved.
+        </div>
+<div class="flex gap-4 font-label-sm text-label-sm">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<span class="text-outline">Version 2.4.0</span>
+</div>
+</footer>
+</body></html>

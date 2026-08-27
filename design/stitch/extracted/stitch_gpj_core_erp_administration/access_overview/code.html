@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Access Overview - GPJ ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#572e99",
+                        "secondary": "#4355b9",
+                        "on-secondary-fixed-variant": "#293ca0",
+                        "secondary-fixed": "#dee0ff",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f0f1f2",
+                        "inverse-primary": "#b6c6ef",
+                        "primary-fixed-dim": "#b6c6ef",
+                        "secondary-fixed-dim": "#bac3ff",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "outline": "#75777f",
+                        "on-tertiary-fixed": "#260058",
+                        "surface-variant": "#e1e3e4",
+                        "tertiary": "#21004d",
+                        "secondary-container": "#8596ff",
+                        "surface-container-highest": "#e1e3e4",
+                        "tertiary-fixed-dim": "#d4bbff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#081b3a",
+                        "on-secondary-container": "#11278e",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#3a047c",
+                        "inverse-surface": "#2e3132",
+                        "on-primary-fixed-variant": "#364768",
+                        "surface-container": "#edeeef",
+                        "primary-fixed": "#d8e2ff",
+                        "outline-variant": "#c5c6cf",
+                        "surface": "#f8f9fa",
+                        "on-secondary-fixed": "#00105c",
+                        "background": "#f8f9fa",
+                        "on-surface": "#191c1d",
+                        "on-surface-variant": "#44474e",
+                        "on-tertiary-container": "#a57eec",
+                        "tertiary-fixed": "#ebdcff",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "surface-dim": "#d9dadb",
+                        "surface-container-high": "#e7e8e9",
+                        "on-primary-container": "#8293b8",
+                        "surface-bright": "#f8f9fa",
+                        "primary": "#031635",
+                        "primary-container": "#1a2b4b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#4e5e81"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "table-cell-padding": "12px 16px",
+                        "margin-page": "24px",
+                        "topbar-height": "64px",
+                        "sidebar-collapsed": "72px",
+                        "sidebar-width": "260px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex">
+<!-- SideNavBar -->
+<aside class="bg-primary dark:bg-primary text-on-primary dark:text-on-primary font-body-md text-body-md docked h-screen w-sidebar-width fixed left-0 top-0 border-r border-outline-variant flex flex-col h-full py-4 px-2 z-50">
+<div class="flex items-center gap-3 px-4 mb-8">
+<div class="w-10 h-10 rounded bg-primary-container flex items-center justify-center text-on-primary font-bold">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary">GPJ ERP</h1>
+<p class="text-xs text-on-primary-container">Core &amp; Admin</p>
+</div>
+</div>
+<nav class="flex-1 overflow-y-auto space-y-1">
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+                Institution
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+                Academic Structure
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="apartment">apartment</span>
+                Infrastructure
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                People
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 bg-secondary text-on-secondary rounded-lg font-bold opacity-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined filled" data-icon="security" data-weight="fill">security</span>
+                Security &amp; Access
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="database">database</span>
+                Master Data
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                Configuration
+            </a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+                Reports
+            </a>
+</nav>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="flex-1 ml-sidebar-width flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-container font-label-md text-label-md docked full-width h-topbar sticky top-0 z-40 border-b border-outline-variant shadow-sm flex justify-between items-center px-gutter w-full">
+<div class="flex items-center flex-1">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-sm" data-icon="search">search</span>
+<input class="w-full pl-9 pr-4 py-1.5 bg-surface-container-low border border-outline-variant rounded-md text-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-colors placeholder:text-on-surface-variant" placeholder="Search scopes..." type="text"/>
+<div class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1">
+<kbd class="hidden sm:inline-block border border-outline-variant rounded px-1.5 text-[10px] font-medium text-on-surface-variant bg-surface">Ctrl+K</kbd>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-on-surface-variant font-medium">2023-2024</span>
+<div class="flex items-center gap-2">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+</div>
+<div class="h-6 w-px bg-outline-variant mx-1"></div>
+<button class="flex items-center gap-2">
+<img alt="Administrator Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A small circular profile picture of a professional administrator in a modern office setting, bright lighting, high quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOafNvK7hFS62EW0uVCR_M1QWC_6Kz57D6P-fQ2V6QgC-oLTcxzpJdq9itcs-NqG809NLMzA1oFJNriEOSk4KEGNnUGsdj2Kz6yYtf5jvYAjHHSPSAqjEgUgz_9VZVAyTbXTJpHiW_54JPL2jPY3shtQB9VMuPGyk_pqcyfruJ9TAWkLF8E0hCG9-feQ18eQwxChzInIeZQUhj2bItawswJahLz5LaQ3KI-z7l9j_5UrikTzm3Z9SE"/>
+</button>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 p-margin-page bg-surface-container-low">
+<div class="flex justify-between items-end mb-6">
+<div>
+<div class="flex items-center gap-2 text-sm text-on-surface-variant mb-1">
+<span>Security &amp; Access</span>
+<span class="material-symbols-outlined text-[16px]" data-icon="chevron_right">chevron_right</span>
+<span class="font-medium text-on-surface">Access Overview</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Access Overview</h2>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center gap-2 px-4 py-2 bg-surface text-on-surface border border-outline-variant rounded-md hover:bg-surface-container-high transition-colors font-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="filter_list">filter_list</span>
+                        Filters
+                    </button>
+<button class="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-md hover:bg-primary-container hover:text-on-primary-container transition-colors font-label-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="download">download</span>
+                        Export
+                    </button>
+</div>
+</div>
+<!-- Matrix Card -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant text-label-md text-on-surface-variant">
+<th class="p-table-cell-padding font-semibold sticky left-0 bg-surface-container-low z-10 border-r border-outline-variant min-w-[200px]">Role / Profile</th>
+<th class="p-table-cell-padding font-semibold text-center border-r border-outline-variant"><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>Dashboard</div></th>
+<th class="p-table-cell-padding font-semibold text-center border-r border-outline-variant"><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[20px]" data-icon="account_balance">account_balance</span>Institution</div></th>
+<th class="p-table-cell-padding font-semibold text-center border-r border-outline-variant"><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[20px]" data-icon="school">school</span>Academics</div></th>
+<th class="p-table-cell-padding font-semibold text-center border-r border-outline-variant"><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[20px]" data-icon="apartment">apartment</span>Infrastructure</div></th>
+<th class="p-table-cell-padding font-semibold text-center border-r border-outline-variant"><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>People</div></th>
+<th class="p-table-cell-padding font-semibold text-center border-r border-outline-variant"><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[20px]" data-icon="security">security</span>Security</div></th>
+<th class="p-table-cell-padding font-semibold text-center border-r border-outline-variant"><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[20px]" data-icon="database">database</span>Master Data</div></th>
+<th class="p-table-cell-padding font-semibold text-center border-r border-outline-variant"><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>Config</div></th>
+<th class="p-table-cell-padding font-semibold text-center"><div class="flex flex-col items-center gap-1"><span class="material-symbols-outlined text-[20px]" data-icon="assessment">assessment</span>Reports</div></th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors">
+<td class="p-table-cell-padding sticky left-0 bg-surface hover:bg-surface-container-lowest z-10 border-r border-outline-variant font-medium text-on-surface">System Admin</td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#dcfce7] text-[#166534] text-[10px] font-bold uppercase tracking-wider">Full Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#dcfce7] text-[#166534] text-[10px] font-bold uppercase tracking-wider">Full Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#dcfce7] text-[#166534] text-[10px] font-bold uppercase tracking-wider">Full Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#dcfce7] text-[#166534] text-[10px] font-bold uppercase tracking-wider">Full Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#dcfce7] text-[#166534] text-[10px] font-bold uppercase tracking-wider">Full Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#dcfce7] text-[#166534] text-[10px] font-bold uppercase tracking-wider">Full Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#dcfce7] text-[#166534] text-[10px] font-bold uppercase tracking-wider">Full Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#dcfce7] text-[#166534] text-[10px] font-bold uppercase tracking-wider">Full Access</span></td>
+<td class="p-table-cell-padding text-center"><span class="inline-flex px-2 py-1 rounded bg-[#dcfce7] text-[#166534] text-[10px] font-bold uppercase tracking-wider">Full Access</span></td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors bg-surface-container-lowest/50">
+<td class="p-table-cell-padding sticky left-0 bg-surface-container-lowest/50 hover:bg-surface-container-lowest z-10 border-r border-outline-variant font-medium text-on-surface">Principal</td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#dcfce7] text-[#166534] text-[10px] font-bold uppercase tracking-wider">Full Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fef08a] text-[#854d0e] text-[10px] font-bold uppercase tracking-wider">Read Only</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fef08a] text-[#854d0e] text-[10px] font-bold uppercase tracking-wider">Read Only</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fef08a] text-[#854d0e] text-[10px] font-bold uppercase tracking-wider">Read Only</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#dcfce7] text-[#166534] text-[10px] font-bold uppercase tracking-wider">Full Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fef08a] text-[#854d0e] text-[10px] font-bold uppercase tracking-wider">Read Only</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fee2e2] text-[#991b1b] text-[10px] font-bold uppercase tracking-wider">No Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fee2e2] text-[#991b1b] text-[10px] font-bold uppercase tracking-wider">No Access</span></td>
+<td class="p-table-cell-padding text-center"><span class="inline-flex px-2 py-1 rounded bg-[#dcfce7] text-[#166534] text-[10px] font-bold uppercase tracking-wider">Full Access</span></td>
+</tr>
+<tr class="border-b border-outline-variant hover:bg-surface-container-lowest transition-colors">
+<td class="p-table-cell-padding sticky left-0 bg-surface hover:bg-surface-container-lowest z-10 border-r border-outline-variant font-medium text-on-surface">Head of Department</td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#dcfce7] text-[#166534] text-[10px] font-bold uppercase tracking-wider">Full Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fee2e2] text-[#991b1b] text-[10px] font-bold uppercase tracking-wider">No Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#dcfce7] text-[#166534] text-[10px] font-bold uppercase tracking-wider">Full Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fef08a] text-[#854d0e] text-[10px] font-bold uppercase tracking-wider">Read Only</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fef08a] text-[#854d0e] text-[10px] font-bold uppercase tracking-wider">Read Only</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fee2e2] text-[#991b1b] text-[10px] font-bold uppercase tracking-wider">No Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fee2e2] text-[#991b1b] text-[10px] font-bold uppercase tracking-wider">No Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fee2e2] text-[#991b1b] text-[10px] font-bold uppercase tracking-wider">No Access</span></td>
+<td class="p-table-cell-padding text-center"><span class="inline-flex px-2 py-1 rounded bg-[#fef08a] text-[#854d0e] text-[10px] font-bold uppercase tracking-wider">Read Only</span></td>
+</tr>
+<tr class="hover:bg-surface-container-lowest transition-colors bg-surface-container-lowest/50">
+<td class="p-table-cell-padding sticky left-0 bg-surface-container-lowest/50 hover:bg-surface-container-lowest z-10 border-r border-outline-variant font-medium text-on-surface">Faculty Member</td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#dcfce7] text-[#166534] text-[10px] font-bold uppercase tracking-wider">Full Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fee2e2] text-[#991b1b] text-[10px] font-bold uppercase tracking-wider">No Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fef08a] text-[#854d0e] text-[10px] font-bold uppercase tracking-wider">Read Only</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fee2e2] text-[#991b1b] text-[10px] font-bold uppercase tracking-wider">No Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fee2e2] text-[#991b1b] text-[10px] font-bold uppercase tracking-wider">No Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fee2e2] text-[#991b1b] text-[10px] font-bold uppercase tracking-wider">No Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fee2e2] text-[#991b1b] text-[10px] font-bold uppercase tracking-wider">No Access</span></td>
+<td class="p-table-cell-padding text-center border-r border-outline-variant"><span class="inline-flex px-2 py-1 rounded bg-[#fee2e2] text-[#991b1b] text-[10px] font-bold uppercase tracking-wider">No Access</span></td>
+<td class="p-table-cell-padding text-center"><span class="inline-flex px-2 py-1 rounded bg-[#fee2e2] text-[#991b1b] text-[10px] font-bold uppercase tracking-wider">No Access</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="mt-4 flex justify-between items-center text-sm text-on-surface-variant">
+<div>Showing 4 roles</div>
+<div class="flex gap-1">
+<button class="px-2 py-1 rounded hover:bg-surface-variant disabled:opacity-50" disabled=""><span class="material-symbols-outlined text-[18px]" data-icon="chevron_left">chevron_left</span></button>
+<button class="px-3 py-1 rounded bg-surface-variant font-medium">1</button>
+<button class="px-2 py-1 rounded hover:bg-surface-variant"><span class="material-symbols-outlined text-[18px]" data-icon="chevron_right">chevron_right</span></button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-low font-label-sm text-label-sm full-width py-4 border-t border-outline-variant flex justify-between items-center px-margin-page">
+<div class="text-on-surface-variant dark:text-on-surface-variant">
+                © 2024 Government Polytechnic, Jalgaon. All rights reserved.
+            </div>
+<div class="flex gap-4">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<span class="text-on-surface-variant">Version 2.4.0</span>
+</div>
+</footer>
+</div>
+</body></html>

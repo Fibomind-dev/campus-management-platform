@@ -16,6 +16,7 @@ class GPJCampus(models.Model):
         index=True,
     )
     address = fields.Text()
+    department_ids = fields.One2many('gpj.department', 'campus_id', string='Departments')
     active = fields.Boolean(default=True, index=True)
 
     _code_institution_unique = models.Constraint(

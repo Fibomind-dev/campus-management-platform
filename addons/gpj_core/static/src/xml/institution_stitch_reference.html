@@ -1,0 +1,381 @@
+<!DOCTYPE html><html class="light" lang="en" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Institution Profile - GPJ ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed": "#ebdcff",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed-variant": "#572e99",
+                        "on-secondary-fixed-variant": "#293ca0",
+                        "primary": "#031635",
+                        "status-warning-bg": "#fff4e5",
+                        "on-secondary-fixed": "#00105c",
+                        "on-primary-fixed": "#081b3a",
+                        "on-primary-container": "#8293b8",
+                        "primary-fixed": "#d8e2ff",
+                        "surface-tint": "#4e5e81",
+                        "on-surface": "#191c1d",
+                        "tertiary": "#21004d",
+                        "status-error-bg": "#fdecea",
+                        "secondary": "#4355b9",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#b6c6ef",
+                        "outline-variant": "#c5c6cf",
+                        "surface-variant": "#e1e3e4",
+                        "status-error-text": "#b00020",
+                        "on-background": "#191c1d",
+                        "secondary-container": "#8596ff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface": "#f8f9fa",
+                        "error": "#ba1a1a",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed": "#260058",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-tertiary-container": "#a57eec",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-dim": "#d9dadb",
+                        "surface-container": "#edeeef",
+                        "secondary-fixed-dim": "#bac3ff",
+                        "status-success-text": "#1e7e34",
+                        "background": "#f8f9fa",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed-variant": "#364768",
+                        "tertiary-fixed-dim": "#d4bbff",
+                        "tertiary-container": "#3a047c",
+                        "surface-container-lowest": "#ffffff",
+                        "on-surface-variant": "#44474e",
+                        "inverse-surface": "#2e3132",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary": "#ffffff",
+                        "status-warning-text": "#664d03",
+                        "primary-container": "#1a2b4b",
+                        "primary-fixed-dim": "#b6c6ef",
+                        "outline": "#75777f",
+                        "secondary-fixed": "#dee0ff",
+                        "on-primary": "#ffffff",
+                        "surface-container-high": "#e7e8e9",
+                        "border-subtle": "#e0e4e8",
+                        "on-secondary-container": "#11278e",
+                        "status-success-bg": "#e6f4ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "1rem",
+                        "topbar-height": "64px",
+                        "form-gap": "1.25rem",
+                        "sidebar-expanded": "260px",
+                        "table-cell-x": "1rem",
+                        "table-cell-y": "0.75rem",
+                        "sidebar-collapsed": "72px",
+                        "page-margin": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "body-sm": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-xl": ["24px", { "lineHeight": "32px", "fontWeight": "700" }],
+                        "headline-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for data tables */
+        .table-container::-webkit-scrollbar {
+            height: 8px;
+            width: 8px;
+        }
+        .table-container::-webkit-scrollbar-track {
+            background: #f1f3f5;
+        }
+        .table-container::-webkit-scrollbar-thumb {
+            background-color: #c5c6cf;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-hidden">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 bottom-0 z-50 flex flex-col bg-primary dark:bg-primary-container h-full w-sidebar-expanded transition-all duration-300">
+<!-- Header -->
+<div class="flex items-center h-topbar-height px-6 bg-primary dark:bg-primary-container border-b border-white/10">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+<img alt="GPJ Institutional Logo" class="w-5 h-5 object-contain" data-alt="A stylized minimalist institutional logo letter G for GPJ." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVbmehQiy-RMFpAGgm6rKr56a_nkd5NhRfp23cbIVAmNwAkzKUs_fIjExhTeQ0Eyy2THOIuVFg-kbd140REIjEllCj3GCMa7rtmfk7qLdKpDQEoDY5rK2ENEGi3PdTpEKQ4f9q7RZhgOge_GUjCwGFCttXmu4kaHA--6AyeIquI-kiuAekESsUKBTjf5O9cjb3FKIF_TXbO-x47uvfnOEpV-kbIw45VNl4IbPPX7WcJCCLISYFO72D">
+</div>
+<div class="flex flex-col">
+<span class="text-headline-md font-headline-md font-bold text-white tracking-tight">GPJ Core ERP</span>
+<span class="text-label-sm font-label-sm text-on-primary-container uppercase tracking-wider">Admin Console</span>
+</div>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 overflow-y-auto py-4 flex flex-col gap-1 px-3">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container opacity-70 hover:opacity-100 hover:bg-secondary/5 transition-colors group" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] group-hover:text-primary-fixed transition-colors" data-icon="dashboard">dashboard</span>
+<span class="text-label-md font-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg border-l-4 border-secondary bg-secondary/10 text-white font-semibold group relative" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] text-primary-fixed" data-icon="account_balance">account_balance</span>
+<span class="text-label-md font-label-md">Institution</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container opacity-70 hover:opacity-100 hover:bg-secondary/5 transition-colors group" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] group-hover:text-primary-fixed transition-colors" data-icon="domain">domain</span>
+<span class="text-label-md font-label-md">Campus</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container opacity-70 hover:opacity-100 hover:bg-secondary/5 transition-colors group" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] group-hover:text-primary-fixed transition-colors" data-icon="business">business</span>
+<span class="text-label-md font-label-md">Department</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container opacity-70 hover:opacity-100 hover:bg-secondary/5 transition-colors group" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] group-hover:text-primary-fixed transition-colors" data-icon="groups">groups</span>
+<span class="text-label-md font-label-md">Organizational Unit</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container opacity-70 hover:opacity-100 hover:bg-secondary/5 transition-colors group" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] group-hover:text-primary-fixed transition-colors" data-icon="badge">badge</span>
+<span class="text-label-md font-label-md">Designation</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container opacity-70 hover:opacity-100 hover:bg-secondary/5 transition-colors group" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] group-hover:text-primary-fixed transition-colors" data-icon="shield_person">shield_person</span>
+<span class="text-label-md font-label-md">Institutional Role</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container opacity-70 hover:opacity-100 hover:bg-secondary/5 transition-colors group" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] group-hover:text-primary-fixed transition-colors" data-icon="card_membership">card_membership</span>
+<span class="text-label-md font-label-md">Membership</span>
+</a>
+</div>
+<!-- Footer -->
+<div class="p-4 border-t border-white/10 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container opacity-70 hover:opacity-100 hover:bg-secondary/5 transition-colors group" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] group-hover:text-primary-fixed" data-icon="settings">settings</span>
+<span class="text-label-md font-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container opacity-70 hover:opacity-100 hover:bg-secondary/5 transition-colors group" href="#">
+<span aria-hidden="true" class="material-symbols-outlined text-[20px] group-hover:text-primary-fixed" data-icon="logout">logout</span>
+<span class="text-label-md font-label-md">Logout</span>
+</a>
+</div>
+</nav>
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 left-sidebar-expanded z-40 flex items-center justify-between px-page-margin bg-surface dark:bg-surface-dim h-topbar-height w-full border-b border-border-subtle transition-all duration-300">
+<!-- Left Section: Breadcrumbs / Brand -->
+<div class="flex items-center gap-4">
+<span class="text-headline-md font-headline-md font-extrabold text-primary hidden md:block">GPJ ERP</span>
+<div class="h-6 w-px bg-border-subtle hidden md:block"></div>
+<nav class="flex text-body-sm text-on-surface-variant font-medium">
+<a class="hover:text-primary transition-colors" href="#">Institutions</a>
+<span class="mx-2 material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary font-semibold">Institution Name</span>
+</nav>
+</div>
+<!-- Right Section: Actions & Context -->
+<div class="flex items-center gap-4">
+<!-- Global Search -->
+<div class="relative hidden lg:flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[18px]">search</span>
+<input class="pl-9 pr-12 py-1.5 bg-surface-container-low border border-border-subtle rounded-md text-body-sm focus:outline-none focus:border-secondary focus:ring-2 focus:ring-secondary/15 transition-all w-64 placeholder:text-on-surface-variant/70" placeholder="Search..." type="text">
+<div class="absolute right-2 flex items-center gap-1">
+<kbd class="px-1.5 py-0.5 text-[10px] font-semibold text-on-surface-variant bg-surface border border-border-subtle rounded shadow-sm">Ctrl+K</kbd>
+</div>
+</div>
+<div class="h-6 w-px bg-border-subtle hidden lg:block"></div>
+<!-- Trailing Primary Action (Context) -->
+<div class="hidden md:flex items-center px-3 py-1.5 bg-surface-container rounded border border-border-subtle">
+<span class="text-label-sm font-label-md text-on-surface">Academic Year</span>
+</div>
+<!-- Icon Actions -->
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-low transition-colors" title="notifications">
+<span class="material-symbols-outlined text-[20px]" data-icon="notifications">notifications</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-low transition-colors" title="help">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+</button>
+</div>
+<!-- Profile -->
+<button class="flex items-center gap-2 pl-2">
+<img alt="Administrator Profile" class="w-8 h-8 rounded-full border border-border-subtle object-cover" data-alt="A small circular avatar showing the letter A for Administrator profile." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPaqqzAEKIh1BbGipi3q-kmCuqzRH6oRjjUz9cVSf02-EIq-t044UP7EWiNv7A7CzvnfNB7rwQsV2jmH2nTIX4wfIwZ_XXQgeZxJQobIxZNvyTbgpMT77JJdRzZ6FF1qNXu2bmfpKFEqcr9Xag37V1O7QjNR7fl6_ByLdp0Hs5jvDeGneDfedV-0iUkacO5l4m8cfPPOIrMfXM-cQipYS1cyPer6rfiKJIT707KTuSVVeDPIOPA0N9">
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="fixed top-topbar-height right-0 bottom-0 left-sidebar-expanded overflow-y-auto bg-surface-container-low p-page-margin transition-all duration-300">
+<div class="max-w-6xl mx-auto space-y-6 pb-20">
+<!-- Entity Header -->
+<div class="bg-surface border border-border-subtle rounded-lg p-6 shadow-[0_2px_10px_rgba(0,0,0,0.02)] flex flex-col md:flex-row md:items-start justify-between gap-4">
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<h1 class="text-headline-xl font-headline-xl text-primary">Institution Name</h1>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-status-success-bg text-status-success-text border border-status-success-text/20">
+                            Active
+                        </span>
+<div class="flex items-center gap-2 ml-2">
+    <span class="px-2 py-0.5 bg-surface-container-high text-on-surface-variant rounded text-[11px] font-bold uppercase tracking-wider border border-border-subtle">— Campuses</span>
+    <span class="px-2 py-0.5 bg-surface-container-high text-on-surface-variant rounded text-[11px] font-bold uppercase tracking-wider border border-border-subtle">— Departments</span>
+</div></div>
+<p class="text-body-md text-on-surface-variant">Primary administrative entity record for the institution.</p>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="px-4 py-2 border border-secondary text-secondary rounded-lg text-label-md font-label-md hover:bg-secondary/5 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">print</span>
+                        Print Profile
+                    </button>
+<button class="px-4 py-2 bg-secondary text-white rounded-lg text-label-md font-label-md hover:bg-secondary/90 transition-colors shadow-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                        Edit Information
+                    </button>
+</div>
+</div>
+<!-- Form Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-form-gap">
+<!-- Section 1: Basic Information -->
+<div class="lg:col-span-7 bg-surface border border-border-subtle rounded-lg shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+<div class="px-6 py-4 border-b border-border-subtle bg-surface-bright rounded-t-lg">
+<h2 class="text-headline-sm font-headline-md text-primary">Basic Information</h2>
+</div>
+<div class="p-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-5">
+<div class="space-y-1.5">
+<label class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+                                Name
+                                <span class="text-error">*</span>
+</label>
+<div class="text-body-md text-on-surface font-medium bg-surface-container-low px-3 py-2 rounded border border-border-subtle/50">—</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+                                Code
+                                <span class="text-error">*</span>
+</label>
+<div class="text-body-md text-on-surface font-medium bg-surface-container-low px-3 py-2 rounded border border-border-subtle/50">—</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-label-sm font-label-sm text-on-surface-variant">Institution Type</label>
+<div class="flex items-center gap-2 px-3 py-2 bg-surface-container-low rounded border border-border-subtle/50">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-body-md text-on-surface font-medium">Government</span>
+</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-label-sm font-label-sm text-on-surface-variant">Established Year</label>
+<div class="text-body-md text-on-surface font-medium bg-surface-container-low px-3 py-2 rounded border border-border-subtle/50">—</div>
+</div>
+</div>
+</div>
+<!-- Section 2: Codes -->
+<div class="lg:col-span-5 bg-surface border border-border-subtle rounded-lg shadow-[0_2px_10px_rgba(0,0,0,0.02)]">
+<div class="px-6 py-4 border-b border-border-subtle bg-surface-bright rounded-t-lg">
+<h2 class="text-headline-sm font-headline-md text-primary">Codes</h2>
+</div>
+<div class="p-6 space-y-5">
+<div class="space-y-1.5">
+<label class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+                                DTE Code
+                                <span class="material-symbols-outlined text-[14px] text-on-surface-variant cursor-help" title="Directorate of Technical Education Code">info</span>
+</label>
+<div class="text-body-md text-on-surface font-medium bg-surface-container-low px-3 py-2 rounded border border-border-subtle/50 font-mono text-sm">—</div>
+</div>
+<div class="space-y-1.5">
+<label class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+                                MSBTE Code
+                                <span class="material-symbols-outlined text-[14px] text-on-surface-variant cursor-help" title="Maharashtra State Board of Technical Education Code">info</span>
+</label>
+<div class="text-body-md text-on-surface font-medium bg-surface-container-low px-3 py-2 rounded border border-border-subtle/50 font-mono text-sm">—</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tabs Section -->
+<div class="bg-surface border border-border-subtle rounded-lg shadow-[0_2px_10px_rgba(0,0,0,0.02)] flex flex-col">
+<!-- Tab Headers -->
+<div class="flex overflow-x-auto border-b border-border-subtle no-scrollbar">
+<button class="px-6 py-3.5 text-label-md font-label-md text-primary border-b-2 border-primary font-bold whitespace-nowrap bg-surface-bright">Campuses</button>
+<button class="px-6 py-3.5 text-label-md font-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors whitespace-nowrap">Departments</button>
+<button class="px-6 py-3.5 text-label-md font-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors whitespace-nowrap">Org Units</button>
+<button class="px-6 py-3.5 text-label-md font-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors whitespace-nowrap">Designations</button>
+<button class="px-6 py-3.5 text-label-md font-label-md text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors whitespace-nowrap">Institutional Roles</button>
+</div>
+<!-- Tab Content: Active (Campuses) -->
+<div class="table-container overflow-x-auto">
+<table class="w-full text-left border-collapse min-w-[800px]">
+<thead>
+<tr class="bg-surface-container-low border-b border-border-subtle text-label-md font-label-md text-on-surface-variant uppercase tracking-wider">
+<th class="px-table-cell-x py-table-cell-y font-semibold w-1/4">Name</th>
+<th class="px-table-cell-x py-table-cell-y font-semibold w-1/6">Code</th>
+<th class="px-table-cell-x py-table-cell-y font-semibold w-2/5">Address</th>
+<th class="px-table-cell-x py-table-cell-y font-semibold w-1/6">Contact No</th><th class="px-table-cell-x py-table-cell-y font-semibold text-center w-24">Active</th>
+<th class="px-table-cell-x py-table-cell-y w-12"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-subtle text-body-md text-on-surface">
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="px-table-cell-x py-table-cell-y font-medium text-primary">—</td>
+<td class="px-table-cell-x py-table-cell-y text-on-surface-variant font-mono text-sm">—</td>
+<td class="px-table-cell-x py-table-cell-y text-on-surface-variant truncate max-w-[300px]" title="—">—</td>
+<td class="px-table-cell-x py-table-cell-y text-on-surface-variant">—</td><td class="px-table-cell-x py-table-cell-y text-center">
+<span class="material-symbols-outlined text-status-success-text text-[20px]" data-weight="fill">check_circle</span>
+</td>
+<td class="px-table-cell-x py-table-cell-y text-right">
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-variant transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group cursor-pointer">
+<td class="px-table-cell-x py-table-cell-y font-medium text-primary">—</td>
+<td class="px-table-cell-x py-table-cell-y text-on-surface-variant font-mono text-sm">—</td>
+<td class="px-table-cell-x py-table-cell-y text-on-surface-variant truncate max-w-[300px]" title="—">—</td>
+<td class="px-table-cell-x py-table-cell-y text-on-surface-variant">—</td><td class="px-table-cell-x py-table-cell-y text-center">
+<span class="material-symbols-outlined text-status-success-text text-[20px]" data-weight="fill">check_circle</span>
+</td>
+<td class="px-table-cell-x py-table-cell-y text-right">
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-variant transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Add Line Action -->
+<tr class="bg-surface hover:bg-surface-container-low transition-colors cursor-pointer border-t-2 border-transparent border-dashed">
+<td class="px-table-cell-x py-3" colspan="6">
+<span class="flex items-center gap-2 text-secondary text-label-md font-label-md font-semibold">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+                                        Add a line
+                                    </span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+
+
+</body></html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Institution Profile - GPJ ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed-variant": "#572e99",
+                        "secondary": "#4355b9",
+                        "on-secondary-fixed-variant": "#293ca0",
+                        "secondary-fixed": "#dee0ff",
+                        "error-container": "#ffdad6",
+                        "inverse-on-surface": "#f0f1f2",
+                        "inverse-primary": "#b6c6ef",
+                        "primary-fixed-dim": "#b6c6ef",
+                        "secondary-fixed-dim": "#bac3ff",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "outline": "#75777f",
+                        "on-tertiary-fixed": "#260058",
+                        "surface-variant": "#e1e3e4",
+                        "tertiary": "#21004d",
+                        "secondary-container": "#8596ff",
+                        "surface-container-highest": "#e1e3e4",
+                        "tertiary-fixed-dim": "#d4bbff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#081b3a",
+                        "on-secondary-container": "#11278e",
+                        "on-error-container": "#93000a",
+                        "tertiary-container": "#3a047c",
+                        "inverse-surface": "#2e3132",
+                        "on-primary-fixed-variant": "#364768",
+                        "surface-container": "#edeeef",
+                        "primary-fixed": "#d8e2ff",
+                        "outline-variant": "#c5c6cf",
+                        "surface": "#f8f9fa",
+                        "on-secondary-fixed": "#00105c",
+                        "background": "#f8f9fa",
+                        "on-surface": "#191c1d",
+                        "on-surface-variant": "#44474e",
+                        "on-tertiary-container": "#a57eec",
+                        "tertiary-fixed": "#ebdcff",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#191c1d",
+                        "surface-dim": "#d9dadb",
+                        "surface-container-high": "#e7e8e9",
+                        "on-primary-container": "#8293b8",
+                        "surface-bright": "#f8f9fa",
+                        "primary": "#031635",
+                        "primary-container": "#1a2b4b",
+                        "surface-container-lowest": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#4e5e81"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "table-cell-padding": "12px 16px",
+                        "margin-page": "24px",
+                        "topbar-height": "64px",
+                        "sidebar-collapsed": "72px",
+                        "sidebar-width": "260px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "400" }],
+                        "label-sm": ["11px", { "lineHeight": "14px", "fontWeight": "500" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+                        "headline-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen overflow-hidden flex">
+<!-- SideNavBar -->
+<nav class="bg-primary dark:bg-primary text-on-primary dark:text-on-primary h-screen w-sidebar fixed left-0 top-0 border-r border-outline-variant flex flex-col py-4 px-2 z-50">
+<div class="flex items-center gap-3 px-3 mb-8">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center shrink-0">
+<img class="w-8 h-8 object-cover rounded-full" data-alt="A clean, minimalist abstract geometric logo in shades of blue and white, representing a modern institution. High contrast, sharp edges, professional corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDucU0GjTrp2E22R0c69V0wbCxbKolh0V0D0sTGrixguSnWi7rmFRDMp4RDBuP-UHdXCroaQsPykGL2BXdDi3SfPS0uemT6lOB7lf65pVOdsqJ6tZS14asw4Muw7Nfn2F4C8xDciPzOA3cM7bKtvqg7tAJGCcaL8V9Y8sMFsz-61AUEP6QAZvtjeo1VbEd3IF9In0DrXzKZpOnb9i9d26N5sGAyuosTf-GeFXpc1aYOfdGhMv5ZA2LM"/>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary">GPJ ERP</h1>
+<p class="font-label-sm text-label-sm text-on-primary-container">Core &amp; Admin</p>
+</div>
+</div>
+<div class="flex-1 overflow-y-auto space-y-1 pr-1 custom-scrollbar">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg bg-secondary text-on-secondary font-bold opacity-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="account_balance">account_balance</span>
+<span class="font-label-md text-label-md">Institution</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="school">school</span>
+<span class="font-label-md text-label-md">Academic Structure</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="apartment">apartment</span>
+<span class="font-label-md text-label-md">Infrastructure</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="group">group</span>
+<span class="font-label-md text-label-md">People</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="security">security</span>
+<span class="font-label-md text-label-md">Security &amp; Access</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="database">database</span>
+<span class="font-label-md text-label-md">Master Data</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Configuration</span>
+</a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="assessment">assessment</span>
+<span class="font-label-md text-label-md">Reports</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="flex-1 flex flex-col ml-sidebar-width h-screen">
+<!-- TopNavBar -->
+<header class="bg-surface dark:bg-surface-container h-topbar sticky top-0 z-40 border-b border-outline-variant shadow-sm flex justify-between items-center px-gutter w-full">
+<div class="flex items-center gap-4">
+<div class="text-on-surface-variant font-body-sm flex items-center gap-2">
+<span class="hover:text-primary cursor-pointer transition-colors">Institution</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-on-surface font-medium">Profile</span>
+</div>
+</div>
+<div class="flex-1 max-w-md mx-8 relative hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-full py-1.5 pl-10 pr-4 text-body-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all" placeholder="Search..." type="text"/>
+<span class="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-outline font-medium border border-outline-variant rounded px-1.5 bg-surface">/</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-highest px-2.5 py-1 rounded-md border border-outline-variant hidden sm:block">
+                    2023-2024
+                </div>
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border border-surface"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden border border-outline-variant ml-2 shrink-0 cursor-pointer">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of an administrator in a well-lit office setting. The lighting is bright and even, conveying a modern corporate environment. Subject is looking directly at the camera." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFkXoELhS6TkPZehHAmRyyULvP5GWUr2y4xA1CDcre5cWceIjilw5G3Xa19_GdL-9_zPs2OhMA-NfzmEwytokERU_JkVTt0ULfXp-Ph4MVJp6g_qMu4123ZJO2qccfuKBOgNTYmrw586SJ3k-OtwNWFWMbCqcnsUaurZeoIJDgz7quixFtMKC7K_eHJSjK_IyTMTi_Bp8UZ1QI94mNo-cz8Jj1PxDg9j688F80FKFRhff47O9tewPZ"/>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<main class="flex-1 overflow-y-auto bg-surface-container-low p-margin-page">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
+<div>
+<div class="flex items-center gap-3 mb-1">
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Government Polytechnic, Jalgaon</h2>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800 border border-emerald-200">
+                            Active
+                        </span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Code: GPJ-001 • Est. 1960</p>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<button class="h-9 px-4 rounded-md border border-outline-variant bg-surface text-on-surface font-label-md text-label-md hover:bg-surface-container hover:text-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">print</span>
+                        Print Profile
+                    </button>
+<button class="h-9 px-4 rounded-md bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container hover:text-on-primary-container transition-colors flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+                        Edit Profile
+                    </button>
+</div>
+</div>
+<!-- Bento Grid Layout for Information -->
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+<!-- Left Column (Wider) -->
+<div class="xl:col-span-2 space-y-6">
+<!-- Basic Info & Contact Glass Card -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="p-5 border-b border-outline-variant bg-surface-bright flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">info</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Institution Details</h3>
+</div>
+<div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+<!-- Basic Info -->
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-4 border-b border-outline-variant pb-1">Basic Information</h4>
+<dl class="space-y-3">
+<div class="grid grid-cols-3 gap-2">
+<dt class="font-body-sm text-body-sm text-on-surface-variant col-span-1">Institution Name</dt>
+<dd class="font-body-md text-body-md text-on-surface font-medium col-span-2">Government Polytechnic, Jalgaon</dd>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<dt class="font-body-sm text-body-sm text-on-surface-variant col-span-1">Institution Code</dt>
+<dd class="font-body-md text-body-md text-on-surface font-medium col-span-2">GPJ-001</dd>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<dt class="font-body-sm text-body-sm text-on-surface-variant col-span-1">Type</dt>
+<dd class="font-body-md text-body-md text-on-surface font-medium col-span-2">Government Technical Institute</dd>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<dt class="font-body-sm text-body-sm text-on-surface-variant col-span-1">Establishment Year</dt>
+<dd class="font-body-md text-body-md text-on-surface font-medium col-span-2">1960</dd>
+</div>
+<div class="grid grid-cols-3 gap-2">
+<dt class="font-body-sm text-body-sm text-on-surface-variant col-span-1">Accreditation</dt>
+<dd class="font-body-md text-body-md text-on-surface font-medium col-span-2">AICTE Approved, NBA Accredited</dd>
+</div>
+</dl>
+</div>
+<!-- Contact Info -->
+<div>
+<h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-4 border-b border-outline-variant pb-1">Contact Information</h4>
+<dl class="space-y-3">
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-2">
+<dt class="font-body-sm text-body-sm text-on-surface-variant xl:col-span-1">Address</dt>
+<dd class="font-body-md text-body-md text-on-surface font-medium xl:col-span-2">National Highway 6, Ramanand Nagar, Jalgaon, Maharashtra 425002</dd>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-2">
+<dt class="font-body-sm text-body-sm text-on-surface-variant xl:col-span-1">Phone</dt>
+<dd class="font-body-md text-body-md text-on-surface font-medium xl:col-span-2">+91 257 222 2281</dd>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-2">
+<dt class="font-body-sm text-body-sm text-on-surface-variant xl:col-span-1">Email</dt>
+<dd class="font-body-md text-body-md text-primary font-medium xl:col-span-2 hover:underline cursor-pointer">principal.gpjalgaon@dtemaharashtra.gov.in</dd>
+</div>
+<div class="grid grid-cols-1 xl:grid-cols-3 gap-2">
+<dt class="font-body-sm text-body-sm text-on-surface-variant xl:col-span-1">Website</dt>
+<dd class="font-body-md text-body-md text-primary font-medium xl:col-span-2 hover:underline cursor-pointer">www.gpjalgaon.org.in</dd>
+</div>
+</dl>
+</div>
+</div>
+</div>
+<!-- Tabs Section -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm overflow-hidden">
+<div class="border-b border-outline-variant bg-surface-bright px-2 flex">
+<button class="px-4 py-3 font-label-md text-label-md text-primary border-b-2 border-primary -mb-px flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">person</span>
+                                Leadership
+                            </button>
+<button class="px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">handshake</span>
+                                Affiliations
+                            </button>
+<button class="px-4 py-3 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">folder</span>
+                                Documents
+                            </button>
+</div>
+<!-- Tab Content: Leadership -->
+<div class="p-6">
+<div class="flex items-start gap-4 p-4 rounded-lg bg-surface-container-low border border-outline-variant">
+<div class="w-16 h-16 rounded-full bg-primary-container shrink-0 overflow-hidden border border-outline-variant">
+<img class="w-full h-full object-cover" data-alt="Professional headshot of a mature academic principal, dressed formally, bright natural light, neutral office background, confident expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqjwVNKyFHY3CA8Xmvm90rxRUPuWsCHQk2EKFXkGS7VSNxKdvdTBNZTPfqNXLG2fgFmXdUodaGeb4iQ8NBN8bMFW7sz8oSIAzP-p08kPbvHUwjRUDr-3eanXaQV1-pMcZOqodeaMmY7wBtFMU9i7Jp1VCiH8Xpuq2r4-K9kWR9N2qjMBob4KXywDph_h4iNLTn0HIT3gcU_TEBWEWyT4uXMklDEMjkbmEV0Iu53Ab-nBT1xDERM6wd"/>
+</div>
+<div class="flex-1">
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-md text-headline-md text-on-surface">Dr. M. V. Ingale</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Principal</p>
+</div>
+<button class="text-primary hover:bg-primary-fixed rounded-md p-1 transition-colors">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+</button>
+</div>
+<div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-2 text-body-sm">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">call</span>
+                                            +91 98765 43210
+                                        </div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">mail</span>
+                                            principal@gpjalgaon.org.in
+                                        </div>
+<div class="flex items-center gap-2 text-on-surface-variant sm:col-span-2 mt-1">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                                            Tenure Started: 15 Aug 2021
+                                        </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column (Sidebar metrics/actions) -->
+<div class="space-y-6">
+<!-- Quick Stats Card -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm p-5">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-4 border-b border-outline-variant pb-2">Institution Scope</h3>
+<div class="space-y-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">location_city</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Campuses</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-primary">2</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined">domain</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Departments</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-secondary">8</span>
+</div>
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">school</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface font-medium">Programs</span>
+</div>
+<span class="font-headline-lg text-headline-lg text-tertiary">12</span>
+</div>
+</div>
+</div>
+<!-- Related Actions -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm p-5">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-4 border-b border-outline-variant pb-2">Related Entities</h3>
+<div class="space-y-2">
+<button class="w-full flex items-center justify-between p-3 rounded-lg border border-outline-variant hover:border-primary hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">view_quilt</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">View Campuses</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">arrow_forward</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 rounded-lg border border-outline-variant hover:border-primary hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">schema</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">View Departments</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">arrow_forward</span>
+</button>
+<button class="w-full flex items-center justify-between p-3 rounded-lg border border-outline-variant hover:border-primary hover:bg-surface-container-low transition-colors group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary">apartment</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Infrastructure Overview</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Location Preview (Map Placeholder) -->
+<div class="bg-surface rounded-xl border border-outline-variant shadow-sm overflow-hidden h-48 relative group cursor-pointer">
+<div class="absolute inset-0 bg-surface-variant" data-alt="A stylized, clean digital map view showing the location of Jalgaon, India. Minimalist vector style, soft blues and grays, professional UI aesthetic, subtle pin marker indicating a central location." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCdZmlSfJhiGUq_KvZbG5hi7Z8lGwIirQ0Y1RcVsm-z2uTV4z2Bps-YNPKHf9Jd16lfWVwWxKAqsWAthdhTQ9xBELLJHRhuOKAjjC_-68W21bXWZgpuVp5cJPGeV3b1SMvvOTYMA_rJuJl0YAIuNNnIjHb4rDsx8ZtiASKN_BcV92jtrRYTZeVhulQesVHAbwS864c7O1kbR97kxlKXGr1ScSpDoXv_GZc7nnJC0tO3YPQyXPptSG6s')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex items-end p-4">
+<div class="text-on-primary">
+<p class="font-label-md text-label-md mb-1 flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">location_on</span> View on Map</p>
+<p class="font-body-sm text-body-sm opacity-90">Jalgaon, Maharashtra</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-container-low border-t border-outline-variant py-4 px-margin-page flex justify-between items-center text-on-surface-variant dark:text-on-surface-variant font-label-sm text-label-sm w-full mt-auto">
+<div>
+                © 2024 Government Polytechnic, Jalgaon. All rights reserved.
+            </div>
+<div class="flex gap-4 hidden sm:flex">
+<a class="hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<span class="text-outline">Version 2.4.0</span>
+</div>
+</footer>
+</div>
+</body></html>

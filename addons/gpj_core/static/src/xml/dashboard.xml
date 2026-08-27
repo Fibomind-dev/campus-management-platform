@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="gpj_core.gpj_dashboard_template">
+        <div class="o_gpj_dashboard container-fluid py-4">
+
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <div>
+                    <h1 class="h3 mb-1">GPJ Core Dashboard</h1>
+                    <p class="text-muted mb-0">
+                        Institution management overview
+                    </p>
+                </div>
+            </div>
+
+            <div class="row g-3 mb-4">
+                <t t-foreach="state.stats" t-as="stat" t-key="stat.label">
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start">
+                                    <div>
+                                        <div class="text-muted small">
+                                            <t t-esc="stat.label"/>
+                                        </div>
+                                        <div class="fs-2 fw-semibold">
+                                            <t t-esc="stat.value"/>
+                                        </div>
+                                    </div>
+
+                                    <span class="badge bg-primary">
+                                        <t t-esc="stat.trendText"/>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </div>
+
+            <div class="card shadow-sm border-0 mb-4">
+                <div class="card-header bg-white">
+                    <h2 class="h5 mb-0">Quick Actions</h2>
+                </div>
+
+                <div class="card-body">
+                    <div class="row g-3">
+                        <t t-foreach="state.quickActions" t-as="action" t-key="action.label">
+                            <div class="col-12 col-md-6 col-lg-3">
+                                <button
+                                    type="button"
+                                    class="btn btn-outline-primary w-100 py-3"
+                                    t-on-click="() => navigateToAction(action.url)"
+                                >
+                                    <t t-esc="action.label"/>
+                                </button>
+                            </div>
+                        </t>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row g-3">
+
+                <div class="col-12 col-lg-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-white d-flex justify-content-between">
+                            <h2 class="h5 mb-0">Alerts</h2>
+                            <span class="badge bg-danger">
+                                <t t-esc="state.alertsCount"/>
+                            </span>
+                        </div>
+
+                        <div class="card-body">
+                            <t t-if="state.alerts.length">
+                                <t t-foreach="state.alerts" t-as="alert" t-key="alert.title">
+                                    <div class="border-bottom py-3">
+                                        <div class="fw-semibold">
+                                            <t t-esc="alert.title"/>
+                                        </div>
+                                        <div class="small text-muted">
+                                            <t t-esc="alert.message"/>
+                                        </div>
+                                        <div class="small text-muted mt-1">
+                                            <t t-esc="alert.time"/>
+                                        </div>
+                                    </div>
+                                </t>
+                            </t>
+
+                            <t t-else="">
+                                <div class="text-muted">
+                                    No alerts.
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-lg-6">
+                    <div class="card h-100 shadow-sm border-0">
+                        <div class="card-header bg-white">
+                            <h2 class="h5 mb-0">Recent Activity</h2>
+                        </div>
+
+                        <div class="card-body">
+                            <t t-foreach="state.activities" t-as="activity" t-key="activity.time">
+                                <div class="border-bottom py-3">
+                                    <div class="small">
+                                        <t t-out="activity.message"/>
+                                    </div>
+                                    <div class="small text-muted mt-1">
+                                        <t t-esc="activity.time"/>
+                                    </div>
+                                </div>
+                            </t>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </t>
+
+</templates>

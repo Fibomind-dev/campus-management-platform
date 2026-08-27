@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- ============================================================
+             GPJ User Extensions - Form View Inheritance
+             ============================================================ -->
+        <record id="view_gpj_users_form_inherit" model="ir.ui.view">
+            <field name="name">res.users.form.inherit.gpj</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="GPJ Institution" groups="gpj_core.group_gpj_user,gpj_core.group_gpj_admin,gpj_core.group_gpj_readonly,gpj_core.group_gpj_cross_institution">
+                        <group>
+                            <group string="Institution Access">
+                                <field name="gpj_institution_ids" widget="many2many_tags" readonly="1" options="{'no_create': True, 'no_open': True}"/>
+                            </group>
+                            <group string="Active Context">
+                                <field name="gpj_active_institution_id" options="{'no_create': True, 'no_open': True}"/>
+                            </group>
+                        </group>
+                        <group string="Memberships">
+                            <field name="gpj_institution_membership_ids">
+                                <list string="Memberships" editable="bottom" create="0" delete="0">
+                                    <field name="institution_id"/>
+                                    <field name="role_ids" widget="many2many_tags" options="{'no_create': True, 'no_open': True}"/>
+                                    <field name="is_default"/>
+                                    <field name="active" widget="boolean_toggle"/>
+                                </list>
+                            </field>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- ============================================================
+             GPJ User Extensions - List View Inheritance
+             ============================================================ -->
+        <record id="view_gpj_users_list_inherit" model="ir.ui.view">
+            <field name="name">res.users.list.inherit.gpj</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='login']" position="after">
+                    <field name="gpj_active_institution_id" optional="show"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- ============================================================
+             GPJ User Extensions - Search View Inheritance
+             ============================================================ -->
+        <record id="view_gpj_users_search_inherit" model="ir.ui.view">
+            <field name="name">res.users.search.inherit.gpj</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_search"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='Inactive']" position="after">
+                    <filter string="Has GPJ Access" name="has_gpj_access" domain="[('gpj_institution_ids', '!=', False)]"/>
+                    <filter string="Active Institution Set" name="has_active_institution" domain="[('gpj_active_institution_id', '!=', False)]"/>
+                </xpath>
+                <xpath expr="//search" position="inside">
+                    <field name="gpj_institution_ids" string="Institutions"/>
+                    <field name="gpj_active_institution_id" string="Active Institution"/>
+                    <filter string="Active Institution" name="group_by_active_institution" context="{'group_by': 'gpj_active_institution_id'}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -18,7 +18,7 @@
             id="menu_gpj_dashboard"
             name="Dashboard"
             parent="menu_gpj_core_root"
-            action="action_gpj_dashboard"
+            action="action_gpj_dashboard_client"
             sequence="1"
         />
 

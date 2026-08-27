@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Programs List - GPJ ERP</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed-variant": "#572e99",
+                      "secondary": "#4355b9",
+                      "on-secondary-fixed-variant": "#293ca0",
+                      "secondary-fixed": "#dee0ff",
+                      "error-container": "#ffdad6",
+                      "inverse-on-surface": "#f0f1f2",
+                      "inverse-primary": "#b6c6ef",
+                      "primary-fixed-dim": "#b6c6ef",
+                      "secondary-fixed-dim": "#bac3ff",
+                      "on-primary": "#ffffff",
+                      "surface-container-low": "#f3f4f5",
+                      "outline": "#75777f",
+                      "on-tertiary-fixed": "#260058",
+                      "surface-variant": "#e1e3e4",
+                      "tertiary": "#21004d",
+                      "secondary-container": "#8596ff",
+                      "surface-container-highest": "#e1e3e4",
+                      "tertiary-fixed-dim": "#d4bbff",
+                      "error": "#ba1a1a",
+                      "on-primary-fixed": "#081b3a",
+                      "on-secondary-container": "#11278e",
+                      "on-error-container": "#93000a",
+                      "tertiary-container": "#3a047c",
+                      "inverse-surface": "#2e3132",
+                      "on-primary-fixed-variant": "#364768",
+                      "surface-container": "#edeeef",
+                      "primary-fixed": "#d8e2ff",
+                      "outline-variant": "#c5c6cf",
+                      "surface": "#f8f9fa",
+                      "on-secondary-fixed": "#00105c",
+                      "background": "#f8f9fa",
+                      "on-surface": "#191c1d",
+                      "on-surface-variant": "#44474e",
+                      "on-tertiary-container": "#a57eec",
+                      "tertiary-fixed": "#ebdcff",
+                      "on-secondary": "#ffffff",
+                      "on-background": "#191c1d",
+                      "surface-dim": "#d9dadb",
+                      "surface-container-high": "#e7e8e9",
+                      "on-primary-container": "#8293b8",
+                      "surface-bright": "#f8f9fa",
+                      "primary": "#031635",
+                      "primary-container": "#1a2b4b",
+                      "surface-container-lowest": "#ffffff",
+                      "on-error": "#ffffff",
+                      "surface-tint": "#4e5e81"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "16px",
+                      "table-cell-padding": "12px 16px",
+                      "margin-page": "24px",
+                      "topbar-height": "64px",
+                      "sidebar-collapsed": "72px",
+                      "sidebar-width": "260px"
+              },
+              "fontFamily": {
+                      "headline-xl": ["Inter"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-lg": ["Inter"],
+                      "body-sm": ["Inter"],
+                      "headline-md": ["Inter"]
+              },
+              "fontSize": {
+                      "headline-xl": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "body-lg": ["15px", {"lineHeight": "22px", "fontWeight": "400"}],
+                      "label-sm": ["11px", {"lineHeight": "14px", "fontWeight": "500"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-lg": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+                      "headline-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+          font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.filled {
+          font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Custom Scrollbar for compact tables */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f3f5; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c5c6cf; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a0a2ab; 
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-hidden flex h-screen">
+<!-- SideNavBar (from JSON) -->
+<nav class="bg-primary text-on-primary font-body-md h-screen w-sidebar fixed left-0 top-0 border-r border-outline-variant flex flex-col py-4 px-2 z-50">
+<!-- Brand Header -->
+<div class="flex items-center px-4 mb-8">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center mr-3 shadow-sm border border-outline/20">
+<span class="material-symbols-outlined text-on-primary-container">account_balance</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-on-primary leading-tight">GPJ ERP</h1>
+<p class="font-label-sm text-label-sm text-on-primary-container opacity-80">Core &amp; Admin</p>
+</div>
+</div>
+<!-- Navigation Tabs -->
+<ul class="flex flex-col gap-1 overflow-y-auto flex-1">
+<li>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">account_balance</span>
+<span class="font-label-md text-label-md">Institution</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2.5 bg-secondary text-on-secondary rounded-lg font-bold opacity-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined filled">school</span>
+<span class="font-label-md text-label-md tracking-wide">Academic Structure</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">apartment</span>
+<span class="font-label-md text-label-md">Infrastructure</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">group</span>
+<span class="font-label-md text-label-md">People</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">security</span>
+<span class="font-label-md text-label-md">Security &amp; Access</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">database</span>
+<span class="font-label-md text-label-md">Master Data</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">settings</span>
+<span class="font-label-md text-label-md">Configuration</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-lg text-on-primary-container hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform">assessment</span>
+<span class="font-label-md text-label-md">Reports</span>
+</a>
+</li>
+</ul>
+<!-- User Profile Minimal -->
+<div class="mt-auto pt-4 border-t border-outline-variant/30 flex items-center gap-3 px-4">
+<img class="w-8 h-8 rounded-full object-cover border border-outline-variant/50" data-alt="A small circular avatar placeholder image showing a generic professional silhouette against a light gray background, suitable for an enterprise software user profile thumbnail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcG0vLHtYVLIf4V8rng6S4uwGLdcyfG_HppAW3fygoCFX3OCssH6wkOayjJ2Pk0atZQSoE-3zv4vxWkmZozcfW4fx1SXprd54gEq4lWOarvJJ8VglxKOh9AzUhbpC8uJvQCbA42Y7dBaDcJlA8lur4eHaPn5psy82TBSMNv9XKI3zSrPDhY-zv2YKkAIlpuSW4qLJ6xt2RYK2Yx4NnSoZkdSL2z_H2imtL8Wu_ghEv2v1uKUbpuG5N"/>
+<div class="flex-1 min-w-0">
+<p class="font-label-sm text-label-sm truncate text-on-primary">Admin User</p>
+<p class="font-label-sm text-label-sm text-on-primary-container truncate text-[10px]">admin@gpjalgaon.ac.in</p>
+</div>
+<button class="text-on-primary-container hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">logout</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Area -->
+<div class="flex-1 ml-sidebar-width flex flex-col h-screen overflow-hidden bg-surface">
+<!-- TopNavBar (from JSON) -->
+<header class="bg-surface font-label-md text-label-md docked full-width h-topbar sticky top-0 z-40 border-b border-outline-variant shadow-sm flex justify-between items-center px-gutter w-full">
+<!-- Context / Title -->
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px]">school</span>
+<span class="font-label-md text-label-md uppercase tracking-wider">Academic Structure</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</div>
+<h2 class="font-headline-md text-headline-md font-bold text-primary">Programs</h2>
+</div>
+<!-- Global Search & Actions -->
+<div class="flex items-center gap-6">
+<!-- Search -->
+<div class="relative hidden lg:block w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-full py-1.5 pl-10 pr-4 text-body-sm font-body-sm focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary transition-all" placeholder="Search across ERP (Ctrl+K)" type="text"/>
+</div>
+<!-- Icons & Context -->
+<div class="flex items-center gap-4 border-l border-outline-variant pl-4">
+<button class="text-on-surface-variant hover:text-primary transition-colors relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="px-3 py-1 bg-surface-container rounded-md font-label-sm text-label-sm text-on-surface-variant border border-outline-variant/50">
+                        2023-2024
+                    </div>
+</div>
+</div>
+</header>
+<!-- Page Canvas -->
+<main class="flex-1 overflow-y-auto p-margin-page">
+<!-- Toolbar -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-6">
+<!-- Left: Filters & Search within module -->
+<div class="flex items-center gap-3">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline text-[18px]">search</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-md py-2 pl-10 pr-4 text-body-sm font-body-sm focus:border-secondary focus:ring-1 focus:ring-secondary" placeholder="Search programs..." type="text"/>
+</div>
+<button class="flex items-center gap-2 px-3 py-2 bg-surface-container-lowest border border-outline-variant rounded-md text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                        Filter
+                    </button>
+<div class="relative group">
+<button class="flex items-center gap-2 px-3 py-2 bg-surface-container-lowest border border-outline-variant rounded-md text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">view_agenda</span>
+                            Group By: Department
+                            <span class="material-symbols-outlined text-[16px]">arrow_drop_down</span>
+</button>
+<!-- Fake Dropdown for visual fidelity -->
+<div class="absolute top-full left-0 mt-1 w-48 bg-surface-container-lowest border border-outline-variant rounded-md shadow-lg hidden group-hover:block z-10">
+<div class="py-1">
+<a class="block px-4 py-2 text-label-md font-label-md text-on-surface bg-surface-container-low hover:bg-surface-container" href="#">Department</a>
+<a class="block px-4 py-2 text-label-md font-label-md text-on-surface hover:bg-surface-container" href="#">Type</a>
+<a class="block px-4 py-2 text-label-md font-label-md text-on-surface hover:bg-surface-container" href="#">Status</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Primary Action -->
+<button class="flex items-center gap-2 px-4 py-2 bg-secondary text-on-secondary rounded-md font-label-md text-label-md hover:bg-on-secondary-fixed-variant transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                    Create Program
+                </button>
+</div>
+<!-- Data Table Card (Glassmorphism inspired clean corporate look) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm overflow-hidden flex flex-col">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low border-b border-outline-variant">
+<tr>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant font-semibold">Code</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant font-semibold">Program Name</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant font-semibold">Department</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant font-semibold">Type</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant font-semibold text-right">Intake Capacity</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant font-semibold text-center">Status</th>
+<th class="p-table-cell-padding font-label-md text-label-md text-on-surface-variant font-semibold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-on-surface divide-y divide-outline-variant/50">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-table-cell-padding font-medium">CO</td>
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-primary-fixed text-primary flex items-center justify-center font-bold text-[10px]">CO</div>
+                                        Computer Engineering
+                                    </div>
+</td>
+<td class="p-table-cell-padding">Computer Engineering</td>
+<td class="p-table-cell-padding text-on-surface-variant">Regular</td>
+<td class="p-table-cell-padding text-right font-medium">60</td>
+<td class="p-table-cell-padding text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-tertiary-fixed text-tertiary">Active</span>
+</td>
+<td class="p-table-cell-padding text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-outline hover:text-secondary"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="text-outline hover:text-error"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-table-cell-padding font-medium">ME</td>
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-secondary-fixed text-secondary flex items-center justify-center font-bold text-[10px]">ME</div>
+                                        Mechanical Engineering
+                                    </div>
+</td>
+<td class="p-table-cell-padding">Mechanical Engineering</td>
+<td class="p-table-cell-padding text-on-surface-variant">Regular</td>
+<td class="p-table-cell-padding text-right font-medium">120</td>
+<td class="p-table-cell-padding text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-tertiary-fixed text-tertiary">Active</span>
+</td>
+<td class="p-table-cell-padding text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-outline hover:text-secondary"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="text-outline hover:text-error"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-table-cell-padding font-medium">CE</td>
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-error-container text-on-error-container flex items-center justify-center font-bold text-[10px]">CE</div>
+                                        Civil Engineering
+                                    </div>
+</td>
+<td class="p-table-cell-padding">Civil Engineering</td>
+<td class="p-table-cell-padding text-on-surface-variant">Shift (Second)</td>
+<td class="p-table-cell-padding text-right font-medium">60</td>
+<td class="p-table-cell-padding text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-surface-container-high text-outline">Inactive</span>
+</td>
+<td class="p-table-cell-padding text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-outline hover:text-secondary"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="text-outline hover:text-error"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-table-cell-padding font-medium">EE</td>
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-primary-fixed-dim text-primary flex items-center justify-center font-bold text-[10px]">EE</div>
+                                        Electrical Engineering
+                                    </div>
+</td>
+<td class="p-table-cell-padding">Electrical Engineering</td>
+<td class="p-table-cell-padding text-on-surface-variant">Regular</td>
+<td class="p-table-cell-padding text-right font-medium">60</td>
+<td class="p-table-cell-padding text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-tertiary-fixed text-tertiary">Active</span>
+</td>
+<td class="p-table-cell-padding text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-outline hover:text-secondary"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="text-outline hover:text-error"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="p-table-cell-padding font-medium">IF</td>
+<td class="p-table-cell-padding">
+<div class="flex items-center gap-2">
+<div class="w-6 h-6 rounded bg-tertiary-fixed text-tertiary flex items-center justify-center font-bold text-[10px]">IF</div>
+                                        Information Technology
+                                    </div>
+</td>
+<td class="p-table-cell-padding">Information Technology</td>
+<td class="p-table-cell-padding text-on-surface-variant">Regular</td>
+<td class="p-table-cell-padding text-right font-medium">60</td>
+<td class="p-table-cell-padding text-center">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold bg-tertiary-fixed text-tertiary">Active</span>
+</td>
+<td class="p-table-cell-padding text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="text-outline hover:text-secondary"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="text-outline hover:text-error"><span class="material-symbols-outlined text-[18px]">delete</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="bg-surface-container-lowest border-t border-outline-variant p-4 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Showing 1 to 5 of 12 programs</span>
+<div class="flex items-center gap-1">
+<button class="p-1 rounded text-outline hover:bg-surface-container hover:text-on-surface transition-colors" disabled="">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 rounded bg-secondary text-on-secondary font-label-sm text-label-sm flex items-center justify-center">1</button>
+<button class="w-8 h-8 rounded text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm flex items-center justify-center transition-colors">2</button>
+<button class="w-8 h-8 rounded text-on-surface-variant hover:bg-surface-container font-label-sm text-label-sm flex items-center justify-center transition-colors">3</button>
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (from JSON) -->
+<footer class="bg-surface-container-low font-label-sm text-label-sm full-width py-4 border-t border-outline-variant flat no shadows flex justify-between items-center px-margin-page mt-auto shrink-0">
+<p class="text-on-surface-variant">© 2024 Government Polytechnic, Jalgaon. All rights reserved.</p>
+<div class="flex items-center gap-6">
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Help Center</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Version 2.4.0</a>
+</div>
+</footer>
+</div>
+</body></html>

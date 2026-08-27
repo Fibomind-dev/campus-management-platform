@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="gpj_core.InstitutionUI">
+
+        <div class="gpj-institution-ui">
+
+            <!-- Loading -->
+            <t t-if="state.loading">
+                <div class="gpj-institution-loading">
+                    Loading institution...
+                </div>
+            </t>
+
+            <!-- Error -->
+            <t t-elif="state.error">
+                <div class="gpj-institution-error">
+                    Unable to load institution.
+                </div>
+            </t>
+
+            <!-- Main UI -->
+            <t t-else="">
+
+                <main class="gpj-institution-page">
+
+                    <!-- Page Header -->
+                    <section class="gpj-institution-header">
+
+                        <div>
+                            <div class="gpj-institution-breadcrumb">
+                                GPJ Core
+                                <span>/</span>
+                                Institutions
+                                <span>/</span>
+                                <strong>
+                                    <t t-esc="institution?.name || 'Institution'"/>
+                                </strong>
+                            </div>
+
+                            <div class="gpj-institution-title-row">
+
+                                <div>
+                                    <h1>
+                                        <t t-esc="institution?.name || 'Institution'"/>
+                                    </h1>
+
+                                    <div class="gpj-institution-meta">
+                                        <span>
+                                            Code:
+                                            <strong>
+                                                <t t-esc="institution?.code || '—'"/>
+                                            </strong>
+                                        </span>
+
+                                        <span>
+                                            <t t-esc="institutionType"/>
+                                        </span>
+
+                                        <span>
+                                            <t t-esc="campusesCount"/>
+                                            Campuses
+                                        </span>
+
+                                        <span>
+                                            <t t-esc="departmentsCount"/>
+                                            Departments
+                                        </span>
+                                    </div>
+
+                                    <p>
+                                        Primary administrative entity record for the institution.
+                                    </p>
+                                </div>
+
+                                <div class="gpj-institution-actions">
+                                    <button type="button"
+                                            class="gpj-btn gpj-btn-secondary">
+                                        <span class="material-symbols-outlined">
+                                            print
+                                        </span>
+                                        Print Profile
+                                    </button>
+
+                                    <button type="button"
+                                            class="gpj-btn gpj-btn-primary">
+                                        <span class="material-symbols-outlined">
+                                            edit
+                                        </span>
+                                        Edit Information
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </section>
+
+                    <!-- Basic Information + Codes -->
+                    <section class="gpj-institution-info-grid">
+
+                        <!-- Basic Information -->
+                        <div class="gpj-card gpj-basic-info">
+
+                            <div class="gpj-card-header">
+                                <h2>Basic Information</h2>
+                            </div>
+
+                            <div class="gpj-card-body gpj-fields-grid">
+
+                                <div class="gpj-field">
+                                    <label>
+                                        Name
+                                        <span>*</span>
+                                    </label>
+                                    <div>
+                                        <t t-esc="institution?.name || '—'"/>
+                                    </div>
+                                </div>
+
+                                <div class="gpj-field">
+                                    <label>
+                                        Code
+                                        <span>*</span>
+                                    </label>
+                                    <div>
+                                        <t t-esc="institution?.code || '—'"/>
+                                    </div>
+                                </div>
+
+                                <div class="gpj-field">
+                                    <label>Institution Type</label>
+                                    <div>
+                                        <t t-esc="institutionType"/>
+                                    </div>
+                                </div>
+
+                                <div class="gpj-field">
+                                    <label>Established Year</label>
+                                    <div>
+                                        <t t-esc="institution?.established_year || '—'"/>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <!-- Codes -->
+                        <div class="gpj-card">
+
+                            <div class="gpj-card-header">
+                                <h2>Codes</h2>
+                            </div>
+
+                            <div class="gpj-card-body">
+
+                                <div class="gpj-field">
+                                    <label>DTE Code</label>
+                                    <div class="gpj-code-value">
+                                        <t t-esc="institution?.dte_code || '—'"/>
+                                    </div>
+                                </div>
+
+                                <div class="gpj-field">
+                                    <label>MSBTE Code</label>
+                                    <div class="gpj-code-value">
+                                        <t t-esc="institution?.msbte_code || '—'"/>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+
+                    <!-- Relationships -->
+                    <section class="gpj-card gpj-relationships">
+
+                        <div class="gpj-tabs">
+
+                            <button class="gpj-tab gpj-tab-active">
+                                Campuses
+                                <span>
+                                    <t t-esc="campusesCount"/>
+                                </span>
+                            </button>
+
+                            <button class="gpj-tab">
+                                Departments
+                                <span>
+                                    <t t-esc="departmentsCount"/>
+                                </span>
+                            </button>
+
+                            <button class="gpj-tab">
+                                Org Units
+                                <span>
+                                    <t t-esc="organizationalUnitsCount"/>
+                                </span>
+                            </button>
+
+                            <button class="gpj-tab">
+                                Designations
+                                <span>
+                                    <t t-esc="designationsCount"/>
+                                </span>
+                            </button>
+
+                            <button class="gpj-tab">
+                                Institutional Roles
+                                <span>
+                                    <t t-esc="institutionalRolesCount"/>
+                                </span>
+                            </button>
+
+                        </div>
+
+                        <!-- Empty relationship state -->
+                        <div class="gpj-empty-state">
+
+                            <span class="material-symbols-outlined">
+                                account_balance
+                            </span>
+
+                            <h3>No campuses yet</h3>
+
+                            <p>
+                                Campuses associated with this institution will appear here.
+                            </p>
+
+                            <button type="button"
+                                    class="gpj-btn gpj-btn-primary">
+                                <span class="material-symbols-outlined">
+                                    add
+                                </span>
+                                Add Campus
+                            </button>
+
+                        </div>
+
+                    </section>
+
+                </main>
+
+            </t>
+
+        </div>
+
+    </t>
+
+</templates>

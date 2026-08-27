@@ -17,6 +17,14 @@
         </record>
 
         <!-- ============================================================
+             GPJ Institution - Modern Stitch UI Action
+             ============================================================ -->
+        <record id="action_gpj_institution_stitch" model="ir.actions.client">
+            <field name="name">Institutions — Modern UI</field>
+            <field name="tag">gpj_institution_ui</field>
+        </record>
+
+        <!-- ============================================================
              GPJ Institution - List View
              ============================================================ -->
         <record id="view_gpj_institution_list" model="ir.ui.view">
@@ -48,7 +56,7 @@
                     <field name="institution_type"/>
                     <field name="active"/>
                     <templates>
-                        <t t-name="kanban-box">
+                        <t t-name="card">
                             <div class="oe_kanban_global_click o_res_partner_kanban">
                                 <div class="oe_kanban_details">
                                     <strong class="o_kanban_record_title">
@@ -88,22 +96,22 @@
                     </header>
                     <sheet>
                         <div class="oe_button_box" name="button_box">
-                            <button name="%(action_gpj_campus)d" type="action" class="oe_stat_button" icon="fa-building" context="{'default_institution_id': active_id}">
+                            <button name="%(action_gpj_campus)d" type="action" class="oe_stat_button" icon="fa-building" context="{'default_institution_id': id}">
                                 <field name="campus_ids" widget="statinfo" string="Campuses"/>
                             </button>
-                            <button name="%(action_gpj_department)d" type="action" class="oe_stat_button" icon="fa-sitemap" context="{'default_institution_id': active_id}">
+                            <button name="%(action_gpj_department)d" type="action" class="oe_stat_button" icon="fa-sitemap" context="{'default_institution_id': id}">
                                 <field name="department_ids" widget="statinfo" string="Departments"/>
                             </button>
-                            <button name="%(action_gpj_organizational_unit)d" type="action" class="oe_stat_button" icon="fa-users" context="{'default_institution_id': active_id}">
+                            <button name="%(action_gpj_organizational_unit)d" type="action" class="oe_stat_button" icon="fa-users" context="{'default_institution_id': id}">
                                 <field name="organizational_unit_ids" widget="statinfo" string="Org. Units"/>
                             </button>
-                            <button name="%(action_gpj_designation)d" type="action" class="oe_stat_button" icon="fa-briefcase" context="{'default_institution_id': active_id}">
+                            <button name="%(action_gpj_designation)d" type="action" class="oe_stat_button" icon="fa-briefcase" context="{'default_institution_id': id}">
                                 <field name="designation_ids" widget="statinfo" string="Designations"/>
                             </button>
-                            <button name="%(action_gpj_institutional_role)d" type="action" class="oe_stat_button" icon="fa-user-tag" context="{'default_institution_id': active_id}">
+                            <button name="%(action_gpj_institutional_role)d" type="action" class="oe_stat_button" icon="fa-user-tag" context="{'default_institution_id': id}">
                                 <field name="institutional_role_ids" widget="statinfo" string="Roles"/>
                             </button>
-                            <button name="%(action_gpj_institution_membership)d" type="action" class="oe_stat_button" icon="fa-users" context="{'default_institution_id': active_id}">
+                            <button name="%(action_gpj_institution_membership)d" type="action" class="oe_stat_button" icon="fa-users" context="{'default_institution_id': id}">
                                 <field name="membership_ids" widget="statinfo" string="Memberships" invisible="1"/>
                             </button>
                         </div>
@@ -208,7 +216,7 @@
                     <filter string="Government" name="type_government" domain="[('institution_type', '=', 'government')]"/>
                     <filter string="Aided" name="type_aided" domain="[('institution_type', '=', 'aided')]"/>
                     <filter string="Private" name="type_private" domain="[('institution_type', '=', 'private')]"/>
-                    <group string="Group By">
+                    <group>
                         <filter string="Type" name="group_by_type" context="{'group_by': 'institution_type'}"/>
                         <filter string="Active" name="group_by_active" context="{'group_by': 'active'}"/>
                     </group>
