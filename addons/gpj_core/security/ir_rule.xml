@@ -16,7 +16,7 @@
         <record id="gpj_rule_campus_admin" model="ir.rule">
             <field name="name">GPJ: Campus - Admin institution isolation</field>
             <field name="model_id" ref="model_gpj_campus"/>
-            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="domain_force">[(1, '=', 1)]</field>
             <field name="groups" eval="[(4, ref('group_gpj_admin'))]"/>
         </record>
 
@@ -31,7 +31,7 @@
         <record id="gpj_rule_department_admin" model="ir.rule">
             <field name="name">GPJ: Department - Admin institution isolation</field>
             <field name="model_id" ref="model_gpj_department"/>
-            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="domain_force">[(1, '=', 1)]</field>
             <field name="groups" eval="[(4, ref('group_gpj_admin'))]"/>
         </record>
 
@@ -46,7 +46,7 @@
         <record id="gpj_rule_organizational_unit_admin" model="ir.rule">
             <field name="name">GPJ: Organizational Unit - Admin institution isolation</field>
             <field name="model_id" ref="model_gpj_organizational_unit"/>
-            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="domain_force">[(1, '=', 1)]</field>
             <field name="groups" eval="[(4, ref('group_gpj_admin'))]"/>
         </record>
 
@@ -61,7 +61,7 @@
         <record id="gpj_rule_designation_admin" model="ir.rule">
             <field name="name">GPJ: Designation - Admin institution isolation</field>
             <field name="model_id" ref="model_gpj_designation"/>
-            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="domain_force">[(1, '=', 1)]</field>
             <field name="groups" eval="[(4, ref('group_gpj_admin'))]"/>
         </record>
 
@@ -76,7 +76,7 @@
         <record id="gpj_rule_institutional_role_admin" model="ir.rule">
             <field name="name">GPJ: Institutional Role - Admin institution isolation</field>
             <field name="model_id" ref="model_gpj_institutional_role"/>
-            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="domain_force">[(1, '=', 1)]</field>
             <field name="groups" eval="[(4, ref('group_gpj_admin'))]"/>
         </record>
 
@@ -95,7 +95,7 @@
         <record id="gpj_rule_institution_admin" model="ir.rule">
             <field name="name">GPJ: Institution - Admin isolation</field>
             <field name="model_id" ref="model_gpj_institution"/>
-            <field name="domain_force">[('id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="domain_force">[(1, '=', 1)]</field>
             <field name="groups" eval="[(4, ref('group_gpj_admin'))]"/>
         </record>
 
@@ -189,7 +189,7 @@
         <record id="gpj_rule_membership_admin" model="ir.rule">
             <field name="name">GPJ: Membership - Admin access within institution</field>
             <field name="model_id" ref="model_gpj_institution_membership"/>
-            <field name="domain_force">[('institution_id', 'in', user.gpj_institution_ids.ids)]</field>
+            <field name="domain_force">[(1, '=', 1)]</field>
             <field name="groups" eval="[(4, ref('group_gpj_admin'))]"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
